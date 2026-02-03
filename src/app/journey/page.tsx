@@ -55,7 +55,7 @@ export default function JourneyPage() {
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.8 }}
-                                className="text-5xl md:text-7xl lg:text-9xl font-black text-white tracking-[-0.07em] leading-[1.1] max-w-4xl mx-auto drop-shadow-2xl"
+                                className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-9xl font-black text-white tracking-[-0.05em] sm:tracking-[-0.07em] leading-[1.15] sm:leading-[1.1] max-w-4xl mx-auto drop-shadow-2xl"
                             >
                                 Evolusi <br />
                                 <span className="text-indigo-400 italic">Diri Anda.</span>
@@ -65,7 +65,7 @@ export default function JourneyPage() {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.4 }}
-                                className="text-2xl text-white/70 font-medium max-w-2xl mx-auto leading-relaxed"
+                                className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/70 font-medium max-w-2xl mx-auto leading-relaxed"
                             >
                                 Lihat bagaimana ketahanan mental Anda tumbuh. <br className="hidden md:block" /> Dari benih ketenangan menjadi bunga ketabahan yang kuat.
                             </motion.p>

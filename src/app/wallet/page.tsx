@@ -56,22 +56,22 @@ export default function WalletPage() {
                                 <Badge className="bg-blue-500/20 text-blue-300 px-8 py-3 rounded-full font-black uppercase text-sm tracking-[0.4em] border border-blue-500/30 backdrop-blur-md shadow-xl shadow-blue-500/10">
                                     Official Coverage
                                 </Badge>
-                                <h1 className="text-5xl md:text-7xl lg:text-9xl font-black text-white tracking-[-0.04em] leading-[1.1] drop-shadow-2xl">
+                                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-9xl font-black text-white tracking-[-0.03em] sm:tracking-[-0.04em] leading-[1.15] sm:leading-[1.1] drop-shadow-2xl">
                                     Status <br />
                                     <span className="text-blue-400">Terlindungi.</span>
                                 </h1>
-                                <p className="text-2xl text-white/70 font-medium max-w-xl leading-relaxed">
+                                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/70 font-medium max-w-xl leading-relaxed">
                                     Fokus pada pemulihan, bukan biaya. <br className="hidden md:block" />
                                     Kesehatan mental Anda dijamin penuh oleh Universitas.
                                 </p>
                             </div>
 
-                            <div className="flex flex-col sm:flex-row gap-8">
-                                <Button className="bg-blue-600 hover:bg-blue-500 text-white px-16 py-12 rounded-[40px] font-black text-2xl shadow-2xl transition-all hover:scale-105 active:scale-95 group">
-                                    <CreditCard className="mr-3" size={28} /> Lihat Kartu Member
+                            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8">
+                                <Button className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-6 sm:px-12 sm:py-8 md:px-16 md:py-12 rounded-[30px] sm:rounded-[40px] font-black text-base sm:text-lg md:text-xl lg:text-2xl shadow-2xl transition-all hover:scale-105 active:scale-95 group">
+                                    <CreditCard className="mr-2 sm:mr-3" size={20} /> Lihat Kartu Member
                                 </Button>
-                                <Button variant="outline" className="bg-transparent hover:bg-white/10 border-4 border-white/20 text-white px-16 py-12 rounded-[40px] font-black text-2xl transition-all">
-                                    <Tag className="mr-3" size={28} /> Benefit Saya
+                                <Button variant="outline" className="bg-transparent hover:bg-white/10 border-2 sm:border-3 md:border-4 border-white/20 text-white px-8 py-6 sm:px-12 sm:py-8 md:px-16 md:py-12 rounded-[30px] sm:rounded-[40px] font-black text-base sm:text-lg md:text-xl lg:text-2xl transition-all">
+                                    <Tag className="mr-2 sm:mr-3" size={20} /> Benefit Saya
                                 </Button>
                             </div>
 
