@@ -37,32 +37,32 @@ export default function LandingPage() {
             <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-white to-transparent z-20" />
           </div>
 
-          <div className="max-w-7xl mx-auto px-6 md:px-12 w-full relative z-30 text-center lg:text-left">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-              <div className="space-y-12">
-                <div className="space-y-8">
-                  <div className="inline-flex items-center gap-4 bg-white/10 backdrop-blur-xl border border-white/20 px-8 py-3 rounded-full text-sm font-black uppercase tracking-[0.4em] text-white shadow-2xl animate-fade-in">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 w-full relative z-30 text-center lg:text-left">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
+              <div className="space-y-6 sm:space-y-8 lg:space-y-12">
+                <div className="space-y-4 sm:space-y-6 lg:space-y-8">
+                  <div className="inline-flex items-center gap-2 sm:gap-4 bg-white/10 backdrop-blur-xl border border-white/20 px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-full text-[10px] sm:text-xs md:text-sm font-black uppercase tracking-[0.2em] sm:tracking-[0.4em] text-white shadow-2xl animate-fade-in">
                     <Sparkles size={18} className="animate-pulse text-indigo-300" />
                     The Future of Mental Peace
                   </div>
 
-                  <h1 className="text-5xl md:text-7xl lg:text-9xl font-black text-white tracking-[-0.04em] leading-[1.1] drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl font-black text-white tracking-[-0.04em] leading-[1.1] drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                     Mulai <br />
                     <span className="text-white/40 italic">Ketangguhan.</span>
                   </h1>
 
-                  <p className="text-2xl text-white/70 font-medium max-w-xl leading-relaxed">
+                  <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/70 font-medium max-w-xl leading-relaxed">
                     Personalized AI-CBT Companion & Mental Identity Monitoring. <br className="hidden md:block" />
                     Membangun ketenangan dalam setiap langkah digital Anda.
                   </p>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-8 justify-center lg:justify-start">
-                  <Button className="bg-white hover:bg-slate-100 text-slate-900 px-16 py-12 rounded-[50px] font-black text-2xl shadow-2xl transition-all hover:scale-105 active:scale-95 group">
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-8 justify-center lg:justify-start">
+                  <Button className="bg-white hover:bg-slate-100 text-slate-900 px-8 sm:px-12 lg:px-16 py-6 sm:py-8 lg:py-12 rounded-[30px] sm:rounded-[40px] lg:rounded-[50px] font-black text-base sm:text-lg lg:text-xl xl:text-2xl shadow-2xl transition-all hover:scale-105 active:scale-95 group">
                     Mulai Sesi Gratis
-                    <ArrowRight size={32} className="ml-4 group-hover:translate-x-4 transition-transform text-indigo-600" />
+                    <ArrowRight className="ml-2 sm:ml-4 w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 group-hover:translate-x-4 transition-transform text-indigo-600" />
                   </Button>
-                  <Button variant="outline" className="border-4 border-white/20 text-white hover:bg-white/10 px-16 py-12 rounded-[50px] font-black text-2xl transition-all">
+                  <Button variant="outline" className="border-2 sm:border-4 border-white/20 text-white hover:bg-white/10 px-8 sm:px-12 lg:px-16 py-6 sm:py-8 lg:py-12 rounded-[30px] sm:rounded-[40px] lg:rounded-[50px] font-black text-base sm:text-lg lg:text-xl xl:text-2xl transition-all">
                     Lihat Demo
                   </Button>
                 </div>
