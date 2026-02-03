@@ -14,7 +14,7 @@ export default function SecurityPage() {
                                 <ShieldCheck size={14} /> Enterprise-Grade Security
                             </p>
                         </div>
-                        <h1 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-slate-900 tracking-tighter">
                             Keamanan Anda adalah <br /><span className="text-indigo-600">Prioritas Mutlak.</span>
                         </h1>
                     </div>

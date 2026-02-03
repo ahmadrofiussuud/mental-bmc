@@ -16,7 +16,7 @@ export default function SolutionsPage() {
             <main className="pt-32 pb-20 px-6 md:px-12">
                 <div className="max-w-7xl mx-auto space-y-20">
                     <div className="text-center space-y-6">
-                        <h1 className="text-5xl md:text-7xl font-black text-slate-900 tracking-tighter">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-slate-900 tracking-tighter">
                             Solusi Kami untuk <br /><span className="text-indigo-600">Ekosistem Mental</span> Anda.
                         </h1>
                         <p className="text-xl text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed">
@@ -49,7 +49,7 @@ export default function SolutionsPage() {
 
                     <div className="bg-indigo-600 rounded-[40px] p-12 md:p-20 text-center text-white space-y-8 shadow-2xl shadow-indigo-200">
                         <h2 className="text-4xl font-black tracking-tight">Siap mentransformasi Institusi Anda?</h2>
-                        <Button className="bg-white text-indigo-600 hover:bg-slate-50 px-10 py-8 rounded-2xl font-black text-lg">
+                        <Button className="bg-white text-indigo-600 hover:bg-slate-50 px-6 py-4 sm:px-8 sm:py-6 md:px-10 md:py-8 rounded-2xl font-black text-base sm:text-lg">
                             Hubungi Konsultan Kami
                         </Button>
                     </div>

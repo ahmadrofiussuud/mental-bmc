@@ -45,11 +45,11 @@ export default function SettingsPage() {
                                 <Badge className="bg-white/10 text-indigo-300 border-indigo-500/30 px-8 py-3 rounded-full font-black uppercase text-sm tracking-[0.4em] backdrop-blur-md">
                                     Personalized Space
                                 </Badge>
-                                <h1 className="text-5xl md:text-7xl lg:text-9xl font-black tracking-[-0.04em] leading-[1.1] drop-shadow-2xl text-white">
+                                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-9xl font-black tracking-[-0.03em] sm:tracking-[-0.04em] leading-[1.15] sm:leading-[1.1] drop-shadow-2xl text-white">
                                     Kontrol <br />
                                     <span className="text-indigo-400 italic">Privat Anda.</span>
                                 </h1>
-                                <p className="text-2xl text-slate-300 font-medium max-w-xl leading-relaxed">
+                                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-300 font-medium max-w-xl leading-relaxed">
                                     Atur cara Anda berinteraksi dengan TenangIn. <br className="hidden md:block" /> Privasi, notifikasi, dan pengalaman visual.
                                 </p>
                             </div>
