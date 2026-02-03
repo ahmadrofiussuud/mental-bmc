@@ -25,7 +25,7 @@ export class InterventionService {
     }
 
     private static async triggerInstitutionalAlert(institutionId: string, averageScore: number) {
-        let severity = RiskLevel.WARNING;
+        let severity: RiskLevel = RiskLevel.WARNING;
         if (averageScore > 60) severity = RiskLevel.HIGH_RISK;
 
         const summary = `Trend Kesehatan Mental Menurun: Rata-rata indeks risiko organisasi naik ke ${averageScore.toFixed(1)}.`;
