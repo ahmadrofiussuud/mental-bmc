@@ -148,8 +148,8 @@ export const Header: React.FC<HeaderProps> = ({ variant = 'default' }) => {
                         </div>
                     ) : (
                         <>
-                            <Link href="/login" className="hidden sm:block">
-                                <Button variant="ghost" className="font-black text-slate-600 hover:text-indigo-600 px-6">Login</Button>
+                            <Link href="/login">
+                                <Button variant="ghost" className="font-black text-white hover:text-indigo-200 px-4 sm:px-6">Login</Button>
                             </Link>
                             <Link href="/trial">
                                 <Button className="bg-slate-900 hover:bg-black text-white px-8 h-12 rounded-2xl font-black shadow-lg shadow-slate-200 transition-all hover:scale-105 active:scale-95">

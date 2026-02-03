@@ -25,7 +25,7 @@ export default function LandingPage() {
 
       <main>
         {/* 1. CINEMATIC HERO: THE STORY OF PEACE */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden py-20 sm:py-0">
           {/* Cinematic Background Layer */}
           <div className="absolute inset-0 z-0">
             <div className="absolute inset-0 bg-slate-900/40 z-10" />
@@ -96,8 +96,8 @@ export default function LandingPage() {
                 </div>
               </div>
 
-              {/* Floating Stat Card - Cinematic Contrast */}
-              <div className="hidden lg:flex justify-end">
+              {/* Floating Stat Card - Hidden on mobile/tablet to prevent overlap */}
+              <div className="hidden xl:flex justify-end">
                 <div className="bg-white/5 backdrop-blur-3xl border border-white/10 p-12 rounded-[60px] shadow-2xl space-y-8 max-w-sm rotate-3 hover:rotate-0 transition-all duration-700 group cursor-default">
                   <div className="w-20 h-20 bg-indigo-500 rounded-[30px] flex items-center justify-center text-white shadow-2xl shadow-indigo-500/20 group-hover:scale-110 transition-transform">
                     <BrainCircuit size={40} />
