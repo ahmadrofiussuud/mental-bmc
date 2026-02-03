@@ -21,26 +21,35 @@ import { motion } from "framer-motion";
 export default function SettingsPage() {
     return (
         <div className="min-h-screen bg-white">
-            <Header variant="settings" />
+            <Header variant="landing" />
 
             <main>
                 {/* 1. HERO SECTION: COMMAND CENTER */}
-                <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-slate-900 text-white pt-32 pb-20">
-                    <div className="absolute inset-x-0 top-0 h-px bg-white/10" />
-                    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" />
-                    <div className="absolute -top-1/2 -right-1/4 w-[1000px] h-[1000px] bg-indigo-600/20 rounded-full blur-[160px]" />
+                <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-32 pb-20">
+                    <div className="absolute inset-0 z-0">
+                        <img
+                            src="/hero-bg.png"
+                            alt="Cinematic Background"
+                            className="w-full h-full object-cover scale-105 opacity-80"
+                        />
+                        <div className="absolute inset-0 bg-slate-900/60 mix-blend-multiply" />
+                        <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-white to-transparent z-20" />
+                    </div>
 
-                    <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-2 gap-24 items-center relative z-10">
+                    <div className="absolute inset-x-0 top-0 h-px bg-white/10 z-20" />
+                    <div className="absolute -top-1/2 -right-1/4 w-[1000px] h-[1000px] bg-indigo-600/30 rounded-full blur-[160px] z-10" />
+
+                    <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-2 gap-24 items-center relative z-30">
                         <div className="space-y-12">
                             <div className="space-y-8">
                                 <Badge className="bg-white/10 text-indigo-300 border-indigo-500/30 px-8 py-3 rounded-full font-black uppercase text-sm tracking-[0.4em] backdrop-blur-md">
                                     Personalized Space
                                 </Badge>
-                                <h1 className="text-5xl md:text-7xl lg:text-9xl font-black tracking-[-0.04em] leading-[1.1] drop-shadow-2xl">
+                                <h1 className="text-5xl md:text-7xl lg:text-9xl font-black tracking-[-0.04em] leading-[1.1] drop-shadow-2xl text-white">
                                     Kontrol <br />
                                     <span className="text-indigo-400 italic">Privat Anda.</span>
                                 </h1>
-                                <p className="text-2xl text-slate-400 font-medium max-w-xl leading-relaxed">
+                                <p className="text-2xl text-slate-300 font-medium max-w-xl leading-relaxed">
                                     Atur cara Anda berinteraksi dengan TenangIn. <br className="hidden md:block" /> Privasi, notifikasi, dan pengalaman visual.
                                 </p>
                             </div>

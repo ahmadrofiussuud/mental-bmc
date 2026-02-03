@@ -2,6 +2,7 @@
 
 import { Header } from "@/components/landing/Header";
 import { Footer } from "@/components/landing/Footer";
+import { useRouter } from "next/navigation";
 import { GeminiChat } from "@/components/GeminiChat";
 import { ResilienceJourney } from "@/components/ResilienceJourney";
 import { AvatarEvolution } from "@/components/AvatarEvolution";
@@ -27,20 +28,27 @@ import {
 } from "lucide-react";
 
 export default function DashboardPage() {
+    const router = useRouter();
+
     return (
         <div className="min-h-screen bg-white selection:bg-indigo-100 selection:text-indigo-600">
-            <Header variant="dashboard" />
+            <Header variant="landing" />
 
             <main>
                 {/* 1. MASSIVE IMMERSIVE HERO SECTION */}
                 <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-50/50 pt-32 pb-20">
-                    <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03]" />
+                    {/* High-Impact Cinematic Background */}
+                    <div className="absolute inset-0 z-0">
+                        <div className="absolute inset-0 bg-slate-900/10 z-10" />
+                        <img
+                            src="/hero-bg.png"
+                            alt="Cinematic Background"
+                            className="w-full h-full object-cover scale-105"
+                        />
+                        <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-slate-900 to-transparent z-20" />
+                    </div>
 
-                    {/* Background Gradients */}
-                    <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-indigo-100/50 blur-[160px] rounded-full -z-10 animate-pulse" />
-                    <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-white to-transparent" />
-
-                    <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                    <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-30">
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -48,43 +56,47 @@ export default function DashboardPage() {
                             className="space-y-12"
                         >
                             <div className="space-y-6">
-                                <div className="inline-flex items-center gap-3 bg-white px-5 py-2.5 rounded-full text-xs font-black uppercase tracking-[0.2em] text-indigo-600 border border-indigo-100 shadow-xl shadow-indigo-500/5">
+                                <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full text-xs font-black uppercase tracking-[0.2em] text-indigo-300 border border-white/10 shadow-xl shadow-indigo-500/5">
                                     <Sparkles size={16} className="animate-pulse" />
                                     Premium Academic Account
                                 </div>
-                                <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 tracking-[-0.04em] leading-[1.1] drop-shadow-sm">
+                                <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-[-0.04em] leading-[1.1] drop-shadow-lg">
                                     Halo, <br />
-                                    <span className="text-indigo-600">Mahasiswa.</span>
+                                    <span className="text-indigo-400">Mahasiswa.</span>
                                 </h1>
-                                <p className="text-2xl text-slate-500 font-medium max-w-xl leading-relaxed">
-                                    Selamat datang kembali di ruang aman Anda. Mari kita lanjurkan perjalanan menuju ketenangan hari ini.
+                                <p className="text-2xl text-white/70 font-medium max-w-xl leading-relaxed">
+                                    Selamat datang kembali di ruang aman Anda. Mari kita lanjutkan perjalanan menuju ketenangan hari ini.
                                 </p>
                             </div>
 
                             <div className="flex flex-col sm:flex-row gap-6">
-                                <Button className="bg-slate-900 hover:bg-black text-white px-12 py-10 rounded-3xl font-black text-xl shadow-2xl shadow-slate-200 transition-all hover:scale-105 active:scale-95 group">
+                                <Button className="bg-white hover:bg-slate-100 text-slate-900 px-12 py-10 rounded-3xl font-black text-xl shadow-2xl shadow-indigo-500/20 transition-all hover:scale-105 active:scale-95 group">
                                     Mulai Jurnal Hari Ini
                                     <ArrowRight size={24} className="ml-2 group-hover:translate-x-2 transition-transform" />
                                 </Button>
-                                <Button variant="outline" className="border-4 border-slate-100 hover:bg-slate-50 px-12 py-10 rounded-3xl font-black text-xl transition-all">
+                                <Button
+                                    variant="outline"
+                                    onClick={() => router.push('/wallet')}
+                                    className="bg-transparent hover:bg-white/10 border-4 border-white/20 text-white px-12 py-10 rounded-3xl font-black text-xl transition-all"
+                                >
                                     Eksplorasi Fitur
                                 </Button>
                             </div>
 
-                            <div className="flex items-center gap-10 pt-4 border-t border-slate-100">
+                            <div className="flex items-center gap-10 pt-4 border-t border-white/10">
                                 <div className="space-y-1">
-                                    <p className="text-3xl font-black text-slate-900 tracking-tighter">4 Hari</p>
-                                    <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">Current Streak</p>
+                                    <p className="text-3xl font-black text-white tracking-tighter">4 Hari</p>
+                                    <p className="text-[10px] font-black uppercase tracking-widest text-white/40">Current Streak</p>
                                 </div>
-                                <div className="w-px h-12 bg-slate-100" />
+                                <div className="w-px h-12 bg-white/10" />
                                 <div className="space-y-1">
-                                    <p className="text-3xl font-black text-indigo-600 tracking-tighter">Mindful Traveler</p>
-                                    <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">Evolution Stage</p>
+                                    <p className="text-3xl font-black text-indigo-400 tracking-tighter">Mindful Traveler</p>
+                                    <p className="text-[10px] font-black uppercase tracking-widest text-white/40">Evolution Stage</p>
                                 </div>
-                                <div className="w-px h-12 bg-slate-100" />
+                                <div className="w-px h-12 bg-white/10" />
                                 <div className="space-y-1">
-                                    <p className="text-3xl font-black text-emerald-600 tracking-tighter">Rp 2.5jt</p>
-                                    <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">Wallet Balance</p>
+                                    <p className="text-3xl font-black text-emerald-400 tracking-tighter">3 Sesi</p>
+                                    <p className="text-[10px] font-black uppercase tracking-widest text-white/40">Free Quota</p>
                                 </div>
                             </div>
                         </motion.div>
@@ -97,11 +109,11 @@ export default function DashboardPage() {
                         >
                             <div className="relative w-[500px] h-[500px]">
                                 {/* Decorative Rings */}
-                                <div className="absolute inset-0 border-2 border-indigo-100 rounded-full animate-spin-slow opacity-50" />
-                                <div className="absolute inset-10 border border-slate-100 rounded-full animate-reverse-spin-slow opacity-30" />
+                                <div className="absolute inset-0 border-2 border-white/10 rounded-full animate-spin-slow opacity-50" />
+                                <div className="absolute inset-10 border border-white/5 rounded-full animate-reverse-spin-slow opacity-30" />
 
                                 <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="w-[400px] h-[400px] bg-white rounded-[100px] shadow-[0_60px_100px_-20px_rgba(79,70,229,0.15)] ring-1 ring-slate-100 p-12">
+                                    <div className="w-[400px] h-[400px] bg-white/5 backdrop-blur-2xl rounded-[80px] shadow-[0_60px_100px_-20px_rgba(0,0,0,0.5)] ring-1 ring-white/10 p-8 overflow-hidden">
                                         <AvatarEvolution level={4} />
                                     </div>
                                 </div>
@@ -209,13 +221,13 @@ export default function DashboardPage() {
                     <div className="max-w-7xl mx-auto space-y-32">
                         <div className="text-center max-w-4xl mx-auto space-y-8">
                             <Badge className="bg-emerald-50 text-emerald-600 px-5 py-2 rounded-full font-black uppercase text-xs tracking-widest border border-emerald-100">
-                                Mental Health Wallet
+                                Student Care Plan
                             </Badge>
                             <h2 className="text-6xl md:text-[8rem] font-black text-slate-900 tracking-tighter leading-[0.85]">
-                                Kelola <span className="text-emerald-600 outline-text">Kesehatan</span> Finansial Mental.
+                                Status <span className="text-emerald-600 outline-text">Keanggotaan</span> & Proteksi.
                             </h2>
                             <p className="text-2xl text-slate-500 font-medium leading-relaxed max-w-2xl mx-auto">
-                                Integrasi pembayaran B2B (Asuransi) dan B2G (Subsidi Kampus) untuk menjamin akses kesehatan mental yang terjangkau bagi semua.
+                                Anda terlindungi sepenuhnya. Akses layanan kesehatan mental premium tanpa memikirkan biaya, berkat dukungan Universitas Anda.
                             </p>
                         </div>
 
@@ -229,34 +241,39 @@ export default function DashboardPage() {
 
                                     <div className="flex justify-between items-start">
                                         <div className="space-y-2">
-                                            <p className="text-xs font-black uppercase tracking-[0.4em] opacity-40">Main Wellness Balance</p>
-                                            <p className="text-7xl font-black tracking-tighter">Rp 2.500.000</p>
+                                            <p className="text-xs font-black uppercase tracking-[0.4em] opacity-40">Active Coverage</p>
+                                            <p className="text-5xl font-black tracking-tighter">University Pro</p>
+                                            <p className="text-emerald-400 font-bold">Tercover Penuh oleh Universitas Indonesia</p>
                                         </div>
                                         <div className="w-20 h-20 bg-white/10 rounded-3xl flex items-center justify-center backdrop-blur-md">
-                                            <Wallet size={40} className="text-indigo-400" />
+                                            <ShieldCheck size={40} className="text-emerald-400" />
                                         </div>
                                     </div>
 
                                     <div className="grid grid-cols-2 gap-12 pt-16 border-t border-white/10">
                                         <div className="space-y-4">
                                             <div className="flex items-center gap-3">
-                                                <Badge className="bg-emerald-500 text-white font-black text-[10px] uppercase">Active</Badge>
-                                                <p className="text-xs font-black uppercase tracking-widest opacity-60">Subsidy Goal</p>
+                                                <Badge className="bg-emerald-500 text-white font-black text-[10px] uppercase">Active Plan</Badge>
+                                                <p className="text-xs font-black uppercase tracking-widest opacity-60">Status</p>
                                             </div>
-                                            <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
-                                                <div className="h-full bg-emerald-500 w-[75%]" />
-                                            </div>
+                                            <p className="text-xl font-bold">Valid until Dec 2026</p>
                                         </div>
                                         <div className="space-y-4">
                                             <div className="flex items-center gap-3">
-                                                <p className="text-xs font-black uppercase tracking-widest opacity-60">B2B Sponsorship</p>
+                                                <p className="text-xs font-black uppercase tracking-widest opacity-60">Sesi Tersedia</p>
                                             </div>
-                                            <p className="text-xl font-bold">Fakultas Psikologi UI</p>
+                                            <div className="flex items-end gap-2">
+                                                <p className="text-4xl font-black">3</p>
+                                                <p className="text-sm font-bold opacity-60 mb-2">/ 5 Sesi</p>
+                                            </div>
+                                            <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
+                                                <div className="h-full bg-emerald-500 w-[60%]" />
+                                            </div>
                                         </div>
                                     </div>
 
                                     <Button className="w-full py-10 rounded-[30px] bg-white text-slate-900 font-black text-xl uppercase tracking-widest hover:bg-slate-100 transition-all shadow-2xl">
-                                        Tukar Voucher Sesi 💳
+                                        Gunakan Sesi Sekarang 🩺
                                     </Button>
                                 </motion.div>
                             </div>
@@ -269,19 +286,19 @@ export default function DashboardPage() {
                                             <div className="w-8 h-8 bg-emerald-50 rounded-lg flex items-center justify-center text-emerald-600 flex-shrink-0">
                                                 <ShieldCheck size={18} />
                                             </div>
-                                            <p className="font-bold text-slate-600">Terintegrasi langsung dengan sistem beasiswa dan asuransi karyawan.</p>
+                                            <p className="font-bold text-slate-600">Terintegrasi langsung dengan sistem akademik kampus.</p>
                                         </li>
                                         <li className="flex gap-4">
                                             <div className="w-8 h-8 bg-emerald-50 rounded-lg flex items-center justify-center text-emerald-600 flex-shrink-0">
                                                 <Lock size={18} />
                                             </div>
-                                            <p className="font-bold text-slate-600">Setiap transaksi dienkripsi dan dijamin kerahasiaannya.</p>
+                                            <p className="font-bold text-slate-600">Privasi Anda tetap terjaga, kampus hanya melihat statistik agregat.</p>
                                         </li>
                                         <li className="flex gap-4">
                                             <div className="w-8 h-8 bg-emerald-50 rounded-lg flex items-center justify-center text-emerald-600 flex-shrink-0">
                                                 <Sparkles size={18} />
                                             </div>
-                                            <p className="font-bold text-slate-600">Dapatkan cashback XP setiap kali melakukan pembayaran sesi.</p>
+                                            <p className="font-bold text-slate-600">Dapatkan akses prioritas ke psikolog klinis terbaik.</p>
                                         </li>
                                     </ul>
                                 </div>

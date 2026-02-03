@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import React from "react";
 import { Header } from "@/components/landing/Header";
 import { Footer } from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
@@ -20,6 +21,18 @@ import { Input } from "@/components/ui/input";
 import { motion, AnimatePresence } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 
+const SafetyCard = ({ icon, title, text }: { icon: React.ReactNode, title: string, text: string }) => (
+    <div className="bg-white p-12 rounded-[50px] border-2 border-slate-50 shadow-xl shadow-slate-100 flex flex-col items-center text-center space-y-6 hover:scale-105 transition-all group">
+        <div className="w-20 h-20 bg-rose-50 rounded-[30px] flex items-center justify-center text-rose-600 group-hover:bg-rose-600 group-hover:text-white transition-all duration-500 shadow-sm">
+            {icon}
+        </div>
+        <div className="space-y-2">
+            <h3 className="text-2xl font-black text-slate-900 tracking-tight">{title}</h3>
+            <p className="text-sm text-slate-500 font-bold italic leading-relaxed">{text}</p>
+        </div>
+    </div>
+);
+
 export default function LaporAmanPage() {
     const [step, setStep] = useState<'info' | 'form' | 'success'>('info');
     const [isSyncing, setIsSyncing] = useState(false);
@@ -34,7 +47,7 @@ export default function LaporAmanPage() {
 
     return (
         <div className="min-h-screen bg-white">
-            <Header variant="lapor" />
+            <Header variant="landing" />
 
             <main>
                 <AnimatePresence mode="wait">
@@ -46,8 +59,16 @@ export default function LaporAmanPage() {
                             exit={{ opacity: 0, scale: 0.95 }}
                         >
                             {/* 1. HERO SECTION: REVERSED SPLIT SECURITY focus */}
-                            <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-rose-50/20 pt-20">
-                                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.03]" />
+                            <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+                                <div className="absolute inset-0 z-0">
+                                    <img
+                                        src="/hero-bg-lapor.png"
+                                        alt="Cinematic Background"
+                                        className="w-full h-full object-cover scale-105"
+                                    />
+                                    <div className="absolute inset-0 bg-slate-900/50 mix-blend-multiply" />
+                                    <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-white to-transparent z-20" />
+                                </div>
 
                                 <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-2 gap-32 items-center relative z-10">
 
@@ -58,27 +79,27 @@ export default function LaporAmanPage() {
                                             transition={{ duration: 6, repeat: Infinity }}
                                             className="relative group"
                                         >
-                                            <div className="w-[500px] h-[600px] bg-white rounded-[100px] shadow-[0_120px_180px_-40px_rgba(225,29,72,0.2)] flex items-center justify-center p-20 ring-1 ring-rose-100 relative overflow-hidden">
+                                            <div className="w-[500px] h-[600px] bg-white/5 data-[state=glass]:backdrop-blur-xl rounded-[100px] shadow-[0_120px_180px_-40px_rgba(225,29,72,0.1)] flex items-center justify-center p-20 ring-1 ring-white/10 relative overflow-hidden backdrop-blur-xl">
                                                 <div className="absolute inset-0 bg-gradient-to-br from-rose-500/10 to-transparent" />
-                                                <ShieldAlert size={240} className="text-rose-600 relative z-10 group-hover:scale-110 transition-transform duration-700" />
+                                                <ShieldAlert size={240} className="text-rose-500 relative z-10 group-hover:scale-110 transition-transform duration-700 drop-shadow-2xl" />
                                             </div>
 
                                             {/* Floating Verification Badges */}
                                             <motion.div
                                                 animate={{ x: [0, 20, 0] }}
                                                 transition={{ duration: 6, repeat: Infinity }}
-                                                className="absolute -top-10 -right-10 bg-white p-8 rounded-[40px] shadow-2xl border border-rose-50 flex items-center gap-4"
+                                                className="absolute -top-10 -right-10 bg-white/10 backdrop-blur-md p-8 rounded-[40px] shadow-2xl border border-white/20 flex items-center gap-4"
                                             >
-                                                <div className="w-12 h-12 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600">
+                                                <div className="w-12 h-12 bg-emerald-500/20 rounded-2xl flex items-center justify-center text-emerald-400">
                                                     <ShieldCheck size={28} />
                                                 </div>
-                                                <p className="font-black text-slate-900 tracking-tight text-xl">Verified Secure</p>
+                                                <p className="font-black text-white tracking-tight text-xl">Verified Secure</p>
                                             </motion.div>
 
                                             <motion.div
                                                 animate={{ x: [0, -20, 0] }}
                                                 transition={{ duration: 5, repeat: Infinity, delay: 1 }}
-                                                className="absolute -bottom-10 -left-10 bg-slate-900 p-8 rounded-[40px] shadow-2xl border border-slate-800 flex items-center gap-4 text-white"
+                                                className="absolute -bottom-10 -left-10 bg-slate-900/90 backdrop-blur-md p-8 rounded-[40px] shadow-2xl border border-white/10 flex items-center gap-4 text-white"
                                             >
                                                 <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
                                                     <Lock size={24} />
@@ -91,14 +112,14 @@ export default function LaporAmanPage() {
                                     {/* RIGHT SIDE: THE CALL TO ACTION */}
                                     <div className="space-y-12 order-1 lg:order-2">
                                         <div className="space-y-8">
-                                            <Badge className="bg-rose-100 text-rose-700 px-8 py-3 rounded-full font-black uppercase text-sm tracking-[0.4em] border-2 border-rose-200 shadow-xl shadow-rose-500/10">
+                                            <Badge className="bg-rose-500/20 text-rose-400 px-8 py-3 rounded-full font-black uppercase text-sm tracking-[0.4em] border border-rose-500/30 shadow-xl shadow-rose-500/10 backdrop-blur-md">
                                                 Zero Tolerance Policy
                                             </Badge>
-                                            <h1 className="text-5xl md:text-7xl lg:text-9xl font-black text-slate-900 tracking-[-0.07em] leading-[1.1]">
+                                            <h1 className="text-5xl md:text-7xl lg:text-9xl font-black text-white tracking-[-0.07em] leading-[1.1] drop-shadow-2xl">
                                                 Kesehatan <br />
-                                                <span className="text-rose-600">Terjaga.</span>
+                                                <span className="text-rose-500">Terjaga.</span>
                                             </h1>
-                                            <p className="text-2xl text-slate-500 font-medium max-w-xl leading-relaxed">
+                                            <p className="text-2xl text-white/70 font-medium max-w-xl leading-relaxed">
                                                 Lapor Aman adalah jalur merah untuk situasi darurat. <br className="hidden md:block" /> Anonimitas Anda adalah prioritas mutlak kami.
                                             </p>
                                         </div>
@@ -106,37 +127,37 @@ export default function LaporAmanPage() {
                                         <div className="flex flex-col sm:flex-row items-center gap-8">
                                             <Button
                                                 onClick={() => setStep('form')}
-                                                className="bg-rose-600 hover:bg-rose-700 text-white px-16 py-12 rounded-[50px] font-black text-2xl shadow-2xl transition-all hover:scale-105 active:scale-95 w-full sm:w-auto"
+                                                className="bg-rose-600 hover:bg-rose-500 text-white px-16 py-12 rounded-[50px] font-black text-2xl shadow-2xl transition-all hover:scale-105 active:scale-95 w-full sm:w-auto"
                                             >
                                                 Mulai Laporan Aman
                                                 <ArrowRight size={32} className="ml-4" />
                                             </Button>
-                                            <div className="flex items-center gap-6 text-slate-400 group cursor-pointer hover:text-rose-600 transition-colors">
-                                                <div className="w-16 h-16 rounded-[30px] bg-slate-50 flex items-center justify-center group-hover:bg-rose-50 transition-all">
+                                            <div className="flex items-center gap-6 text-white/40 group cursor-pointer hover:text-rose-500 transition-colors">
+                                                <div className="w-16 h-16 rounded-[30px] bg-white/5 flex items-center justify-center group-hover:bg-rose-500/20 transition-all border border-white/10">
                                                     <PhoneCall size={28} />
                                                 </div>
                                                 <div className="flex flex-col">
                                                     <span className="font-black text-xs uppercase tracking-[0.3em]">SOS HOTLINE</span>
-                                                    <span className="font-bold text-lg text-slate-900 group-hover:text-rose-600">Call Now</span>
+                                                    <span className="font-bold text-lg text-white group-hover:text-rose-500">Call Now</span>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div className="flex items-center gap-12 pt-12 border-t border-slate-100">
+                                        <div className="flex items-center gap-12 pt-12 border-t border-white/10">
                                             <div className="group">
-                                                <p className="text-5xl font-black text-slate-900 tracking-tighter group-hover:scale-110 transition-transform">100%</p>
-                                                <p className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 mt-2">Anonymous</p>
+                                                <p className="text-5xl font-black text-white tracking-tighter group-hover:scale-110 transition-transform">100%</p>
+                                                <p className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40 mt-2">Anonymous</p>
                                             </div>
-                                            <div className="w-px h-16 bg-slate-200" />
+                                            <div className="w-px h-16 bg-white/10" />
                                             <div className="group">
-                                                <p className="text-5xl font-black text-slate-900 tracking-tighter group-hover:scale-110 transition-transform">AES-256</p>
-                                                <p className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 mt-2">Encrypted</p>
+                                                <p className="text-5xl font-black text-white tracking-tighter group-hover:scale-110 transition-transform">AES-256</p>
+                                                <p className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40 mt-2">Encrypted</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30">
+                                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30 text-white">
                                     <span className="text-[10px] font-black uppercase tracking-[0.4em]">Pelajari Lebih Lanjut</span>
                                     <ChevronDown className="animate-bounce" />
                                 </div>
@@ -250,14 +271,4 @@ export default function LaporAmanPage() {
     );
 }
 
-const SafetyCard = ({ icon, title, text }: { icon: React.ReactNode, title: string, text: string }) => (
-    <div className="bg-white p-12 rounded-[50px] border-2 border-slate-50 shadow-xl shadow-slate-100 flex flex-col items-center text-center space-y-6 hover:scale-105 transition-all group">
-        <div className="w-20 h-20 bg-rose-50 rounded-[30px] flex items-center justify-center text-rose-600 group-hover:bg-rose-600 group-hover:text-white transition-all duration-500 shadow-sm">
-            {icon}
-        </div>
-        <div className="space-y-2">
-            <h3 className="text-2xl font-black text-slate-900 tracking-tight">{title}</h3>
-            <p className="text-sm text-slate-500 font-bold italic leading-relaxed">{text}</p>
-        </div>
-    </div>
-);
+

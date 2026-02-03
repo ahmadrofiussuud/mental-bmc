@@ -43,7 +43,9 @@ export const Header: React.FC<HeaderProps> = ({ variant = 'default' }) => {
         '/lapor',
         '/history',
         '/settings',
-        '/profile'
+        '/settings',
+        '/profile',
+        '/consultation'
     ];
 
     // Mock auth state: If current path is in dashboardPaths, consider logged in
@@ -61,9 +63,10 @@ export const Header: React.FC<HeaderProps> = ({ variant = 'default' }) => {
     const dashboardFeatures = [
         { label: "Home", href: "/dashboard" },
         { label: "Journey", href: "/journey" },
-        { label: "Status Wallet", href: "/wallet" },
+        { label: "Care Plan", href: "/wallet" },
         { label: "Lapor Aman", href: "/lapor" },
         { label: "Riwayat", href: "/history" },
+        { label: "Konsultasi", href: "/consultation" },
     ];
 
     const publicLinks = [
@@ -74,7 +77,7 @@ export const Header: React.FC<HeaderProps> = ({ variant = 'default' }) => {
     ];
 
     return (
-        <header className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-700 ${isScrolled ? "bg-white/80 backdrop-blur-3xl border-b border-slate-100 py-3 shadow-2xl shadow-slate-100/50" : "bg-transparent py-8"
+        <header className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-700 ${isScrolled ? "bg-white/95 backdrop-blur-xl border-b border-slate-100 py-3 shadow-2xl shadow-slate-100/50" : "bg-transparent py-8"
             }`}>
             <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex items-center justify-between">
 
@@ -91,18 +94,28 @@ export const Header: React.FC<HeaderProps> = ({ variant = 'default' }) => {
                     {isLoggedIn ? (
                         dashboardFeatures.map((feature) => {
                             const isActive = pathname === feature.href;
+
+                            // Dynamic Style for Active State based on Scroll
+                            let activeStyle = currentTheme.accent;
+                            let indicatorStyle = currentTheme.indicator;
+
+                            if (isScrolled && (variant === 'landing' || variant === 'settings')) {
+                                activeStyle = "text-slate-900";
+                                indicatorStyle = "bg-slate-900";
+                            }
+
                             return (
                                 <Link
                                     key={feature.label}
                                     href={feature.href}
                                     className={`px-5 py-2.5 rounded-2xl transition-all duration-500 group relative ${isActive
-                                        ? currentTheme.accent
+                                        ? activeStyle
                                         : variant === 'settings' && !isScrolled ? "text-white/60 hover:text-white hover:bg-white/5" : "text-slate-400 hover:text-slate-900 hover:bg-slate-50"
                                         }`}
                                 >
                                     <span className="font-black text-[13px] uppercase tracking-[0.2em]">{feature.label}</span>
                                     {isActive && (
-                                        <div className={`absolute -bottom-1 left-5 right-5 h-1 rounded-full ${currentTheme.indicator}`} />
+                                        <div className={`absolute -bottom-1 left-5 right-5 h-1 rounded-full ${indicatorStyle}`} />
                                     )}
                                 </Link>
                             );

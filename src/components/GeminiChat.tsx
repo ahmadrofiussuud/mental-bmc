@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion, AnimatePresence } from "framer-motion";
+import { useRouter } from "next/navigation";
 import {
     BrainCircuit,
     Sparkles,
@@ -21,6 +22,7 @@ import {
 type SupportTier = 'AI' | 'PEER' | 'PROFESSIONAL';
 
 export const GeminiChat = () => {
+    const router = useRouter();
     const [tier, setTier] = useState<SupportTier>('AI');
     const [showEmergency, setShowEmergency] = useState(false);
     const [showSummary, setShowSummary] = useState(false);
@@ -80,7 +82,7 @@ export const GeminiChat = () => {
                             />
                             <TierButton
                                 active={tier === 'PROFESSIONAL'}
-                                onClick={() => setTier('PROFESSIONAL')}
+                                onClick={() => router.push('/consultation')}
                                 icon={<ShieldCheck size={14} />}
                                 label="Professional"
                             />
@@ -116,8 +118,8 @@ export const GeminiChat = () => {
                                             className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
                                         >
                                             <div className={`max-w-[80%] p-6 rounded-[30px] shadow-sm text-[15px] leading-relaxed font-medium ${m.role === "user"
-                                                    ? "bg-indigo-600 text-white rounded-br-none"
-                                                    : "bg-slate-50 text-slate-800 rounded-bl-none border border-slate-100"
+                                                ? "bg-indigo-600 text-white rounded-br-none"
+                                                : "bg-slate-50 text-slate-800 rounded-bl-none border border-slate-100"
                                                 }`}>
                                                 {m.content}
                                             </div>
@@ -240,8 +242,8 @@ const TierButton = ({ active, onClick, icon, label }: { active: boolean, onClick
     <button
         onClick={onClick}
         className={`flex items-center gap-2 px-6 py-3 rounded-2xl text-[11px] font-black transition-all ${active
-                ? "bg-white text-slate-900 shadow-xl shadow-black/10 scale-105"
-                : "text-white/50 hover:text-white"
+            ? "bg-white text-slate-900 shadow-xl shadow-black/10 scale-105"
+            : "text-white/50 hover:text-white"
             }`}
     >
         {icon}
