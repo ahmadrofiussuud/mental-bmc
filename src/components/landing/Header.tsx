@@ -80,7 +80,7 @@ export const Header: React.FC<HeaderProps> = ({ variant = 'default' }) => {
     return (
         <header className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-700 ${isScrolled ? "bg-white/95 backdrop-blur-xl border-b border-slate-100 py-3 shadow-2xl shadow-slate-100/50" : "bg-transparent py-8"
             }`}>
-            <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex items-center justify-between">
+            <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 flex items-center justify-between gap-3">
 
                 {/* Logo - Permanent and Consistent */}
                 <Link href="/" className="flex items-center gap-3 group cursor-pointer shrink-0">
@@ -151,7 +151,7 @@ export const Header: React.FC<HeaderProps> = ({ variant = 'default' }) => {
                             <Link href="/login">
                                 <Button variant="ghost" className="font-black text-white hover:text-indigo-200 px-4 sm:px-6">Login</Button>
                             </Link>
-                            <Link href="/trial">
+                            <Link href="/trial" className="hidden sm:block">
                                 <Button className="bg-slate-900 hover:bg-black text-white px-8 h-12 rounded-2xl font-black shadow-lg shadow-slate-200 transition-all hover:scale-105 active:scale-95">
                                     Get Trial
                                 </Button>

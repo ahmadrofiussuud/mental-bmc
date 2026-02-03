@@ -90,12 +90,12 @@ export default function DashboardPage() {
                                 </div>
                                 <div className="hidden sm:block w-px h-12 bg-white/10" />
                                 <div className="space-y-1">
-                                    <p className="text-xl sm:text-2xl md:text-3xl font-black text-indigo-400 tracking-tighter">Mindful Traveler</p>
+                                    <p className="text-base sm:text-xl md:text-2xl lg:text-3xl font-black text-indigo-400 tracking-tight sm:tracking-tighter">Mindful Traveler</p>
                                     <p className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-white/40">Evolution Stage</p>
                                 </div>
                                 <div className="hidden sm:block w-px h-12 bg-white/10" />
                                 <div className="space-y-1">
-                                    <p className="text-2xl sm:text-3xl font-black text-emerald-400 tracking-tighter">3 Sesi</p>
+                                    <p className="text-xl sm:text-2xl md:text-3xl font-black text-emerald-400 tracking-tighter">3 Sesi</p>
                                     <p className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-white/40">Free Quota</p>
                                 </div>
                             </div>
@@ -184,7 +184,7 @@ export default function DashboardPage() {
                                         "Tuliskan tiga hal kecil yang membuatmu tersenyum hari ini, meskipun harimu terasa melelahkan."
                                     </p>
                                 </div>
-                                <Button className="w-full py-10 rounded-[30px] bg-slate-900 text-white font-black text-xl uppercase tracking-widest hover:bg-black transition-all">
+                                <Button className="w-full py-8 sm:py-10 rounded-[30px] bg-slate-900 text-white font-black text-base sm:text-lg md:text-xl uppercase tracking-wide sm:tracking-widest hover:bg-black transition-all whitespace-nowrap">
                                     Tulis Sekarang ✍️
                                 </Button>
                             </motion.div>
@@ -346,7 +346,7 @@ export default function DashboardPage() {
                                 </p>
                             </div>
                             <Button className="w-full py-12 rounded-[35px] bg-rose-600 text-white font-black text-2xl uppercase tracking-widest hover:bg-rose-700 transition-all shadow-2xl shadow-rose-200">
-                                Kirim Laporan 🚨
+                                Kirim Laporan
                             </Button>
                         </div>
                     </div>
