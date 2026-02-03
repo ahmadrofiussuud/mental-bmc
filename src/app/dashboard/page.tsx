@@ -77,25 +77,25 @@ export default function DashboardPage() {
                                 <Button
                                     variant="outline"
                                     onClick={() => router.push('/wallet')}
-                                    className="bg-transparent hover:bg-white/10 border-4 border-white/20 text-white px-12 py-10 rounded-3xl font-black text-xl transition-all"
+                                    className="bg-transparent hover:bg-white/10 border-2 sm:border-4 border-white/20 text-white px-8 py-6 sm:px-10 sm:py-8 md:px-12 md:py-10 rounded-2xl sm:rounded-3xl font-black text-base sm:text-lg md:text-xl transition-all"
                                 >
                                     Eksplorasi Fitur
                                 </Button>
                             </div>
 
-                            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-10 pt-4 border-t border-white/10">
-                                <div className="space-y-1">
-                                    <p className="text-2xl sm:text-3xl font-black text-white tracking-tighter">4 Hari</p>
+                            <div className="flex flex-row items-center gap-4 sm:gap-6 md:gap-10 pt-4 border-t border-white/10 overflow-x-auto">
+                                <div className="space-y-1 shrink-0">
+                                    <p className="text-xl sm:text-2xl md:text-3xl font-black text-white tracking-tighter">4 Hari</p>
                                     <p className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-white/40">Current Streak</p>
                                 </div>
-                                <div className="hidden sm:block w-px h-12 bg-white/10" />
-                                <div className="space-y-1">
+                                <div className="w-px h-10 sm:h-12 bg-white/10 shrink-0" />
+                                <div className="space-y-1 shrink-0">
                                     <p className="text-base sm:text-xl md:text-2xl lg:text-3xl font-black text-indigo-400 tracking-tight sm:tracking-tighter">Mindful Traveler</p>
                                     <p className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-white/40">Evolution Stage</p>
                                 </div>
-                                <div className="hidden sm:block w-px h-12 bg-white/10" />
-                                <div className="space-y-1">
-                                    <p className="text-xl sm:text-2xl md:text-3xl font-black text-emerald-400 tracking-tighter">3 Sesi</p>
+                                <div className="w-px h-10 sm:h-12 bg-white/10 shrink-0" />
+                                <div className="space-y-1 shrink-0">
+                                    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-emerald-400 tracking-tighter">3 Sesi</p>
                                     <p className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-white/40">Free Quota</p>
                                 </div>
                             </div>

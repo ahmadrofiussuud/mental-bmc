@@ -128,8 +128,8 @@ export const Header: React.FC<HeaderProps> = ({ variant = 'default' }) => {
                     )}
                 </nav>
 
-                {/* Actions / Profile - Consistent Avatar */}
-                <div className="flex items-center gap-5 shrink-0">
+                {/* Actions / Profile - Consistent Avatar (HIDDEN ON MOBILE) */}
+                <div className="hidden md:flex items-center gap-5 shrink-0">
                     {isLoggedIn ? (
                         <div className="flex items-center gap-3">
                             <div className={`flex items-center gap-4 p-1.5 pl-5 rounded-2xl border transition-all duration-500 group cursor-pointer ${variant === 'settings' && !isScrolled ? 'bg-white/5 border-white/10 hover:bg-white/10' : 'bg-slate-50 border-slate-200/50 hover:bg-slate-100 shadow-sm'}`}>
