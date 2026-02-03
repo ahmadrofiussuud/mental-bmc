@@ -36,11 +36,11 @@ export default function ConsultationPage() {
                                 <Badge className="bg-blue-500/20 text-blue-300 px-8 py-3 rounded-full font-black uppercase text-sm tracking-[0.4em] border border-blue-500/30 backdrop-blur-md shadow-xl shadow-blue-500/10">
                                     Licensed Professionals
                                 </Badge>
-                                <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-[-0.04em] leading-[1.1] drop-shadow-2xl">
+                                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-black text-white tracking-[-0.03em] sm:tracking-[-0.04em] leading-[1.15] sm:leading-[1.1] drop-shadow-2xl">
                                     Bicara dengan <br />
                                     <span className="text-blue-400 italic">Ahli.</span>
                                 </h1>
-                                <p className="text-2xl text-slate-300 font-medium max-w-xl leading-relaxed">
+                                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-300 font-medium max-w-xl leading-relaxed">
                                     Terkadang, langkah paling berani adalah meminta bantuan. <br className="hidden md:block" />
                                     Terhubung dengan psikolog klinis berlisensi untuk sesi terapi yang aman, rahasia, dan empatik.
                                 </p>
@@ -52,9 +52,9 @@ export default function ConsultationPage() {
                                 transition={{ delay: 0.3 }}
                                 className="flex flex-col sm:flex-row gap-6"
                             >
-                                <Button className="bg-blue-600 hover:bg-blue-500 text-white px-12 py-10 rounded-[30px] font-black text-xl shadow-2xl transition-all hover:scale-105 active:scale-95 group">
+                                <Button className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-6 sm:px-10 sm:py-8 md:px-12 md:py-10 rounded-[25px] sm:rounded-[30px] font-black text-base sm:text-lg md:text-xl shadow-2xl transition-all hover:scale-105 active:scale-95 group">
                                     Jadwalkan Sesi
-                                    <Calendar className="ml-3 group-hover:-translate-y-1 transition-transform" />
+                                    <Calendar className="ml-2 sm:ml-3 group-hover:-translate-y-1 transition-transform" />
                                 </Button>
                                 <div className="flex items-center gap-4 text-white/60 pl-4">
                                     <div className="flex -space-x-4">
