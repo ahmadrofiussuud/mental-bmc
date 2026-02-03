@@ -61,7 +61,7 @@ export const GeminiChat = () => {
                                 <BrainCircuit size={32} />
                             </div>
                             <div>
-                                <CardTitle className="text-2xl font-black tracking-tighter">TenangIn Co-Pilot</CardTitle>
+                                <CardTitle className="text-lg sm:text-xl md:text-2xl font-black tracking-tighter">TenangIn Co-Pilot</CardTitle>
                                 <p className="text-[10px] font-black uppercase tracking-[0.3em] text-indigo-300">CBT & Mindfulness AI</p>
                             </div>
                         </div>

@@ -168,43 +168,40 @@ export const Header: React.FC<HeaderProps> = ({ variant = 'default' }) => {
                     {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
                 </button>
             </div>
-        </div>
 
-            {/* Mobile Menu */ }
-    {
-        mobileMenuOpen && (
-            <div className="absolute top-full left-0 right-0 bg-white border-b border-slate-100 p-6 md:hidden animate-in slide-in-from-top-4 duration-300 shadow-xl">
-                <div className="flex flex-col gap-3">
-                    {isLoggedIn ? (
-                        dashboardFeatures.map((feature) => (
-                            <Link
-                                key={feature.label}
-                                href={feature.href}
-                                onClick={() => setMobileMenuOpen(false)}
-                                className={`flex items-center justify-between p-4 rounded-2xl transition-all ${pathname === feature.href
-                                    ? "bg-indigo-50 text-indigo-600"
-                                    : "bg-slate-50 text-slate-900"
-                                    }`}
-                            >
-                                <span className="font-black uppercase text-xs tracking-widest">{feature.label}</span>
-                                <ChevronRight size={16} className={pathname === feature.href ? "text-indigo-400" : "text-slate-300"} />
+            {/* Mobile Menu */}
+            {mobileMenuOpen && (
+                <div className="absolute top-full left-0 right-0 bg-white border-b border-slate-100 p-6 md:hidden animate-in slide-in-from-top-4 duration-300 shadow-xl">
+                    <div className="flex flex-col gap-3">
+                        {isLoggedIn ? (
+                            dashboardFeatures.map((feature) => (
+                                <Link
+                                    key={feature.label}
+                                    href={feature.href}
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    className={`flex items-center justify-between p-4 rounded-2xl transition-all ${pathname === feature.href
+                                        ? "bg-indigo-50 text-indigo-600"
+                                        : "bg-slate-50 text-slate-900"
+                                        }`}
+                                >
+                                    <span className="font-black uppercase text-xs tracking-widest">{feature.label}</span>
+                                    <ChevronRight size={16} className={pathname === feature.href ? "text-indigo-400" : "text-slate-300"} />
+                                </Link>
+                            ))
+                        ) : (
+                            publicLinks.map((link) => (
+                                <NavLink key={link.label} label={link.label} href={link.href} mobile />
+                            ))
+                        )}
+                        {!isLoggedIn && (
+                            <Link href="/trial" onClick={() => setMobileMenuOpen(false)} className="mt-4">
+                                <Button className="bg-indigo-600 text-white w-full rounded-2xl py-7 font-black text-lg">Start Free Trial</Button>
                             </Link>
-                        ))
-                    ) : (
-                        publicLinks.map((link) => (
-                            <NavLink key={link.label} label={link.label} href={link.href} mobile />
-                        ))
-                    )}
-                    {!isLoggedIn && (
-                        <Link href="/trial" onClick={() => setMobileMenuOpen(false)} className="mt-4">
-                            <Button className="bg-indigo-600 text-white w-full rounded-2xl py-7 font-black text-lg">Start Free Trial</Button>
-                        </Link>
-                    )}
+                        )}
+                    </div>
                 </div>
-            </div>
-        )
-    }
-        </header >
+            )}
+        </header>
     );
 };
 
