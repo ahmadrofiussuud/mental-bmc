@@ -19,7 +19,7 @@ export async function POST(req: Request) {
             sessionId,
             content,
             senderType: 'USER',
-            senderId: session.user.id
+            senderId: (session?.user as any)?.id || 'anonymous'
         }
     });
 

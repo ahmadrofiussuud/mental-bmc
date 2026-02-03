@@ -10,7 +10,7 @@ export async function POST(req: Request) {
     const { sessionCost, professionalId } = await req.json();
 
     try {
-        const result = await WalletService.processSessionPayment(session.user.id, sessionCost);
+        const result = await WalletService.processSessionPayment((session?.user as any)?.id, sessionCost);
         return NextResponse.json({ success: true, source: result.source });
     } catch (error: any) {
         return NextResponse.json({ error: error.message }, { status: 400 });

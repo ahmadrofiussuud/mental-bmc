@@ -272,6 +272,7 @@ model Institution {
   users         User[]
   subsidies     Subsidy[]
   reports       LaporAman[]
+  alerts        InstitutionalAlert[]
   webhooks      InstitutionWebhook[]
   ult           ULT?
 }

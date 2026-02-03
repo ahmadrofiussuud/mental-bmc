@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 
 interface HeaderProps {
-    variant?: 'dashboard' | 'journey' | 'wallet' | 'lapor' | 'history' | 'settings' | 'landing' | 'default';
+    variant?: 'dashboard' | 'journey' | 'wallet' | 'lapor' | 'history' | 'settings' | 'landing' | 'default' | 'consultation';
 }
 
 export const Header: React.FC<HeaderProps> = ({ variant = 'default' }) => {
@@ -29,6 +29,7 @@ export const Header: React.FC<HeaderProps> = ({ variant = 'default' }) => {
         lapor: { accent: 'text-rose-600', bg: 'bg-rose-50/10', border: 'border-rose-100', indicator: 'bg-rose-600' },
         history: { accent: 'text-slate-900', bg: 'bg-slate-50/10', border: 'border-slate-100', indicator: 'bg-slate-900' },
         settings: { accent: 'text-white', bg: 'bg-white/10', border: 'border-white/10', indicator: 'bg-white' },
+        consultation: { accent: 'text-blue-600', bg: 'bg-blue-50/10', border: 'border-blue-100', indicator: 'bg-blue-600' },
         landing: { accent: 'text-white', bg: 'bg-white/10', border: 'border-white/10', indicator: 'bg-white' },
         default: { accent: 'text-indigo-600', bg: 'bg-indigo-50/10', border: 'border-indigo-100', indicator: 'bg-indigo-600' }
     };

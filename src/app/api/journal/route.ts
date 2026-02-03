@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     // 2. Save Journal (Simplified - Encryption should be handled client-side or in Lib)
     const journal = await prisma.journal.create({
         data: {
-            userId: session.user.id,
+            userId: (session?.user as any)?.id,
             title,
             content,
             mood,
@@ -28,7 +28,7 @@ export async function POST(req: Request) {
     // 3. Save Risk Assessment
     await prisma.riskAssessment.create({
         data: {
-            userId: session.user.id,
+            userId: (session?.user as any)?.id,
             status: riskAnalysis.level,
             score: riskAnalysis.score,
             triggers: riskAnalysis.triggers
@@ -36,7 +36,7 @@ export async function POST(req: Request) {
     });
 
     // 4. Reward XP
-    const xpResult = await GamificationService.completeActivity(session.user.id, 'JOURNAL');
+    const xpResult = await GamificationService.completeActivity((session?.user as any)?.id, 'JOURNAL');
 
     return NextResponse.json({
         success: true,
