@@ -235,30 +235,30 @@ export default function DashboardPage() {
                             <div className="lg:col-span-7">
                                 <motion.div
                                     whileHover={{ y: -10 }}
-                                    className="bg-slate-900 rounded-[60px] p-20 text-white space-y-16 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.4)] relative overflow-hidden group"
+                                    className="bg-slate-900 rounded-[40px] sm:rounded-[60px] p-6 sm:p-12 md:p-16 lg:p-20 text-white space-y-8 sm:space-y-12 md:space-y-16 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.4)] relative overflow-hidden group"
                                 >
                                     <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/20 rounded-full -mr-48 -mt-48 blur-3xl group-hover:bg-indigo-500/30 transition-colors" />
 
-                                    <div className="flex justify-between items-start">
-                                        <div className="space-y-2">
-                                            <p className="text-xs font-black uppercase tracking-[0.4em] opacity-40">Active Coverage</p>
-                                            <p className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter">University Pro</p>
-                                            <p className="text-sm sm:text-base text-emerald-400 font-bold">Tercover Penuh oleh Universitas Indonesia</p>
+                                    <div className="flex justify-between items-start gap-4">
+                                        <div className="space-y-2 flex-1">
+                                            <p className="text-xs font-black uppercase tracking-[0.3em] sm:tracking-[0.4em] opacity-40">Active Coverage</p>
+                                            <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter">University Pro</p>
+                                            <p className="text-xs sm:text-sm md:text-base text-emerald-400 font-bold">Tercover Penuh oleh Universitas Indonesia</p>
                                         </div>
-                                        <div className="w-20 h-20 bg-white/10 rounded-3xl flex items-center justify-center backdrop-blur-md">
-                                            <ShieldCheck size={40} className="text-emerald-400" />
+                                        <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 rounded-2xl sm:rounded-3xl flex items-center justify-center backdrop-blur-md shrink-0">
+                                            <ShieldCheck size={32} className="text-emerald-400 sm:w-10 sm:h-10" />
                                         </div>
                                     </div>
 
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-12 pt-8 sm:pt-16 border-t border-white/10">
-                                        <div className="space-y-4">
+                                    <div className="grid grid-cols-1 gap-6 pt-6 sm:pt-8 border-t border-white/10">
+                                        <div className="space-y-3">
                                             <div className="flex items-center gap-3">
                                                 <Badge className="bg-emerald-500 text-white font-black text-[10px] uppercase">Active Plan</Badge>
                                                 <p className="text-xs font-black uppercase tracking-widest opacity-60">Status</p>
                                             </div>
                                             <p className="text-base sm:text-lg md:text-xl font-bold">Valid until Dec 2026</p>
                                         </div>
-                                        <div className="space-y-4">
+                                        <div className="space-y-3">
                                             <div className="flex items-center gap-3">
                                                 <p className="text-xs font-black uppercase tracking-widest opacity-60">Sesi Tersedia</p>
                                             </div>
@@ -272,7 +272,7 @@ export default function DashboardPage() {
                                         </div>
                                     </div>
 
-                                    <Button className="w-full py-6 sm:py-8 md:py-10 rounded-[25px] sm:rounded-[30px] bg-white text-slate-900 font-black text-sm sm:text-base md:text-lg lg:text-xl uppercase tracking-wide sm:tracking-widest hover:bg-slate-100 transition-all shadow-2xl">
+                                    <Button className="w-full py-8 sm:py-10 rounded-[25px] sm:rounded-[30px] bg-white text-slate-900 font-black text-base sm:text-lg md:text-xl uppercase tracking-normal sm:tracking-wide hover:bg-slate-100 transition-all shadow-2xl">
                                         Sesi Sekarang 🩺
                                     </Button>
                                 </motion.div>
