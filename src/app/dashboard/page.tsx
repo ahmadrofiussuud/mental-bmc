@@ -147,7 +147,7 @@ export default function DashboardPage() {
 
                 {/* 2. AI CO-PILOT SECTION - FULL WIDTH EXPERIENCE */}
                 <section className="py-20 sm:py-32 md:py-40 px-4 sm:px-6 md:px-12 bg-white">
-                    <div className="max-w-7xl mx-auto space-y-20">
+                    <div className="max-w-7xl mx-auto space-y-12 sm:space-y-20">
                         <div className="max-w-3xl space-y-6">
                             <Badge className="bg-indigo-50 text-indigo-600 hover:bg-indigo-50 px-5 py-2 rounded-full font-black uppercase text-xs tracking-widest border-indigo-100">
                                 AI Companion
@@ -217,7 +217,7 @@ export default function DashboardPage() {
                 </section>
 
                 {/* 4. WALLET & SUBSIDY SECTION */}
-                <section className="py-40 px-6 md:px-12 bg-white">
+                <section className="py-20 sm:py-32 md:py-40 px-4 sm:px-6 md:px-12 bg-white">
                     <div className="max-w-7xl mx-auto space-y-32">
                         <div className="text-center max-w-4xl mx-auto space-y-8">
                             <Badge className="bg-emerald-50 text-emerald-600 px-5 py-2 rounded-full font-black uppercase text-xs tracking-widest border border-emerald-100">
@@ -242,28 +242,28 @@ export default function DashboardPage() {
                                     <div className="flex justify-between items-start">
                                         <div className="space-y-2">
                                             <p className="text-xs font-black uppercase tracking-[0.4em] opacity-40">Active Coverage</p>
-                                            <p className="text-5xl font-black tracking-tighter">University Pro</p>
-                                            <p className="text-emerald-400 font-bold">Tercover Penuh oleh Universitas Indonesia</p>
+                                            <p className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter">University Pro</p>
+                                            <p className="text-sm sm:text-base text-emerald-400 font-bold">Tercover Penuh oleh Universitas Indonesia</p>
                                         </div>
                                         <div className="w-20 h-20 bg-white/10 rounded-3xl flex items-center justify-center backdrop-blur-md">
                                             <ShieldCheck size={40} className="text-emerald-400" />
                                         </div>
                                     </div>
 
-                                    <div className="grid grid-cols-2 gap-12 pt-16 border-t border-white/10">
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-12 pt-8 sm:pt-16 border-t border-white/10">
                                         <div className="space-y-4">
                                             <div className="flex items-center gap-3">
                                                 <Badge className="bg-emerald-500 text-white font-black text-[10px] uppercase">Active Plan</Badge>
                                                 <p className="text-xs font-black uppercase tracking-widest opacity-60">Status</p>
                                             </div>
-                                            <p className="text-xl font-bold">Valid until Dec 2026</p>
+                                            <p className="text-base sm:text-lg md:text-xl font-bold">Valid until Dec 2026</p>
                                         </div>
                                         <div className="space-y-4">
                                             <div className="flex items-center gap-3">
                                                 <p className="text-xs font-black uppercase tracking-widest opacity-60">Sesi Tersedia</p>
                                             </div>
                                             <div className="flex items-end gap-2">
-                                                <p className="text-4xl font-black">3</p>
+                                                <p className="text-3xl sm:text-4xl font-black">3</p>
                                                 <p className="text-sm font-bold opacity-60 mb-2">/ 5 Sesi</p>
                                             </div>
                                             <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
@@ -272,8 +272,8 @@ export default function DashboardPage() {
                                         </div>
                                     </div>
 
-                                    <Button className="w-full py-10 rounded-[30px] bg-white text-slate-900 font-black text-xl uppercase tracking-widest hover:bg-slate-100 transition-all shadow-2xl">
-                                        Gunakan Sesi Sekarang 🩺
+                                    <Button className="w-full py-6 sm:py-8 md:py-10 rounded-[25px] sm:rounded-[30px] bg-white text-slate-900 font-black text-sm sm:text-base md:text-lg lg:text-xl uppercase tracking-wide sm:tracking-widest hover:bg-slate-100 transition-all shadow-2xl">
+                                        Sesi Sekarang 🩺
                                     </Button>
                                 </motion.div>
                             </div>
@@ -340,12 +340,12 @@ export default function DashboardPage() {
                                 <ShieldAlert size={48} />
                             </div>
                             <div className="space-y-4">
-                                <h4 className="text-4xl font-black tracking-tighter">Laporan Darurat Anonim</h4>
-                                <p className="text-lg text-slate-500 font-bold leading-relaxed">
+                                <h4 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter">Laporan Darurat Anonim</h4>
+                                <p className="text-sm sm:text-base md:text-lg text-slate-500 font-bold leading-relaxed">
                                     Butuh bantuan mendesak? Kirim laporan anonim sekarang. Kami menjamin kerahasiaan identitas Anda secara total.
                                 </p>
                             </div>
-                            <Button className="w-full py-12 rounded-[35px] bg-rose-600 text-white font-black text-2xl uppercase tracking-widest hover:bg-rose-700 transition-all shadow-2xl shadow-rose-200">
+                            <Button className="w-full py-8 sm:py-10 md:py-12 rounded-[30px] sm:rounded-[35px] bg-rose-600 text-white font-black text-base sm:text-lg md:text-xl lg:text-2xl uppercase tracking-wide sm:tracking-widest hover:bg-rose-700 transition-all shadow-2xl shadow-rose-200">
                                 Kirim Laporan
                             </Button>
                         </div>
