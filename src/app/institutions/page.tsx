@@ -10,10 +10,10 @@ export default function InstitutionsPage() {
             <main className="pt-32 pb-20 px-6">
                 <div className="max-w-7xl mx-auto space-y-24">
                     <div className="max-w-3xl space-y-6">
-                        <h1 className="text-6xl md:text-8xl font-black text-slate-900 tracking-tighter leading-[0.85]">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-black text-slate-900 tracking-tighter leading-[0.9] sm:leading-[0.85]">
                             Dukungan <br /> Berbasis <br /><span className="text-indigo-600">Institusi.</span>
                         </h1>
-                        <p className="text-xl text-slate-500 font-medium leading-relaxed italic">
+                        <p className="text-base sm:text-lg md:text-xl text-slate-500 font-medium leading-relaxed italic">
                             TenangIn bermitra dengan Universitas, Sekolah, dan Perusahaan untuk membangun lingkungan yang sehat secara emosional.
                         </p>
                     </div>

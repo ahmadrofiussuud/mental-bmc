@@ -47,7 +47,7 @@ export default function HistoryPage() {
                             <motion.h1
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 animate={{ opacity: 1, scale: 1 }}
-                                className="text-8xl md:text-[11rem] font-black text-slate-900 tracking-[-0.08em] leading-[0.85]"
+                                className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-[11rem] font-black text-slate-900 tracking-[-0.06em] sm:tracking-[-0.08em] leading-[0.9] sm:leading-[0.85]"
                             >
                                 Arsip <br />
                                 <span className="text-indigo-600 italic">Refleksi.</span>
@@ -57,7 +57,7 @@ export default function HistoryPage() {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.3 }}
-                                className="text-2xl text-slate-400 font-medium max-w-2xl mx-auto leading-relaxed"
+                                className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-400 font-medium max-w-2xl mx-auto leading-relaxed"
                             >
                                 Setiap jejak langkah, setiap momen ketenangan. <br className="hidden md:block" /> Tersimpan rapi dalam memori digital Anda.
                             </motion.p>
@@ -69,9 +69,9 @@ export default function HistoryPage() {
                             transition={{ delay: 0.5 }}
                             className="max-w-3xl mx-auto relative group"
                         >
-                            <Search className="absolute left-10 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-indigo-600 transition-colors" size={32} />
+                            <Search className="absolute left-6 sm:left-10 top-1/2 -translate-y-1/2 text-slate-300 group-focus-within:text-indigo-600 transition-colors" size={20} />
                             <Input
-                                className="w-full pl-24 pr-12 py-12 rounded-[50px] border-4 border-white bg-white/70 backdrop-blur-xl font-bold text-2xl outline-none focus:ring-4 focus:ring-indigo-100 transition-all shadow-2xl shadow-indigo-500/5 placeholder:text-slate-200"
+                                className="w-full pl-14 sm:pl-24 pr-6 sm:pr-12 py-6 sm:py-10 md:py-12 rounded-[30px] sm:rounded-[50px] border-2 sm:border-4 border-white bg-white/70 backdrop-blur-xl font-bold text-base sm:text-lg md:text-2xl outline-none focus:ring-4 focus:ring-indigo-100 transition-all shadow-2xl shadow-indigo-500/5 placeholder:text-slate-200"
                                 placeholder="Cari memori atau jurnal yang ingin Anda ulas..."
                             />
                         </motion.div>

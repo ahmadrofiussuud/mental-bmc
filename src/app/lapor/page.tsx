@@ -115,11 +115,11 @@ export default function LaporAmanPage() {
                                             <Badge className="bg-rose-500/20 text-rose-400 px-8 py-3 rounded-full font-black uppercase text-sm tracking-[0.4em] border border-rose-500/30 shadow-xl shadow-rose-500/10 backdrop-blur-md">
                                                 Zero Tolerance Policy
                                             </Badge>
-                                            <h1 className="text-5xl md:text-7xl lg:text-9xl font-black text-white tracking-[-0.07em] leading-[1.1] drop-shadow-2xl">
+                                            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-9xl font-black text-white tracking-[-0.05em] sm:tracking-[-0.07em] leading-[1.15] sm:leading-[1.1] drop-shadow-2xl">
                                                 Kesehatan <br />
                                                 <span className="text-rose-500">Terjaga.</span>
                                             </h1>
-                                            <p className="text-2xl text-white/70 font-medium max-w-xl leading-relaxed">
+                                            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/70 font-medium max-w-xl leading-relaxed">
                                                 Lapor Aman adalah jalur merah untuk situasi darurat. <br className="hidden md:block" /> Anonimitas Anda adalah prioritas mutlak kami.
                                             </p>
                                         </div>
