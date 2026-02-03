@@ -1,0 +1,305 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// --- NextAuth.js System ---
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+// --- User & Profiles ---
+
+enum UserRole {
+  STUDENT
+  WORKER
+  PROFESSIONAL
+  ADMIN
+}
+
+model User {
+  id                String    @id @default(cuid())
+  name              String?
+  email             String?   @unique
+  emailVerified     DateTime?
+  image             String?
+  role              UserRole  @default(STUDENT)
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  // NextAuth Relations
+  accounts      Account[]
+  sessions      Session[]
+
+  // Profile data
+  profile       Profile?
+
+  // Resilience Journey (Gamification)
+  xp            Int       @default(0)
+  levelId       String?
+  level         UserLevel? @relation(fields: [levelId], references: [id])
+  avatarId      String?
+  avatar        Avatar?    @relation(fields: [avatarId], references: [id])
+  milestones    UserMilestone[]
+
+  // Mental Health Wallet
+  wallet        Wallet?
+
+  // Journaling (Security: Encrypted)
+  journals      Journal[]
+  riskAssessments RiskAssessment[]
+
+  // Chat Support
+  chatSessions  ChatSession[]
+
+  // Institutional Integration
+  institutionId String?
+  institution   Institution? @relation(fields: [institutionId], references: [id])
+}
+
+model Profile {
+  id                String  @id @default(cuid())
+  userId            String  @unique
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  bio               String?
+  specialization    String? // For Professionals
+  licenseNumber     String? // For Professionals
+  organizationName  String? // School or Company name
+}
+
+// --- The Resilience Journey (Gamification) ---
+
+model Avatar {
+  id          String   @id @default(cuid())
+  name        String
+  imageUrl    String
+  minLevel    Int      @default(1)
+  users       User[]
+}
+
+model UserLevel {
+  id          String   @id @default(cuid())
+  levelNumber Int      @unique
+  xpRequired  Int
+  title       String
+  users       User[]
+}
+
+model DailyMilestone {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  xpReward    Int
+  userMilestones UserMilestone[]
+}
+
+model UserMilestone {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  milestoneId String
+  milestone   DailyMilestone @relation(fields: [milestoneId], references: [id])
+  completedAt DateTime @default(now())
+}
+
+// --- Mental Health Wallet ---
+
+model Wallet {
+  id            String   @id @default(cuid())
+  userId        String   @unique
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  balance       Decimal  @default(0.0) @db.Decimal(10, 2)
+  subsidies     Subsidy[]
+  sessionCredits SessionCredit[]
+}
+
+model Subsidy {
+  id            String   @id @default(cuid())
+  walletId      String
+  wallet        Wallet   @relation(fields: [walletId], references: [id], onDelete: Cascade)
+  institutionId String
+  institution   Institution @relation(fields: [institutionId], references: [id])
+  amount        Decimal  @db.Decimal(10, 2)
+  purpose       String?  // e.g., "Monthly Student Mental Health Budget"
+  expiresAt     DateTime?
+  createdAt     DateTime @default(now())
+}
+
+model SessionCredit {
+  id            String   @id @default(cuid())
+  walletId      String
+  wallet        Wallet   @relation(fields: [walletId], references: [id], onDelete: Cascade)
+  count         Int      @default(0)
+  source        String?  // e.g., "B2B Sponsorship"
+  updatedAt     DateTime @updatedAt
+}
+
+// --- Security & Features ---
+
+model Journal {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title       String?
+  content     String   // @note: This field should store encrypted content
+  mood        String?
+  riskScore   Int      @default(0) // Internal score for analysis
+  isPrivate   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model RiskAssessment {
+  id            String   @id @default(cuid())
+  userId        String
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  status        RiskLevel @default(SAFE)
+  score         Int
+  triggers      String[] // List of keywords found
+  createdAt     DateTime @default(now())
+}
+
+enum RiskLevel {
+  SAFE
+  WARNING
+  HIGH_RISK
+}
+
+enum SupportLevel {
+  AI
+  PEER
+  PROFESSIONAL
+}
+
+model ChatSession {
+  id            String   @id @default(cuid())
+  userId        String
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  level         SupportLevel @default(AI)
+  status        String   @default("ACTIVE") // ACTIVE, CLOSED
+  messages      Message[]
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Message {
+  id            String   @id @default(cuid())
+  sessionId     String
+  session       ChatSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  content       String
+  senderType    String   // USER, AI, PEER, PROFESSIONAL
+  senderId      String?  // Empty for AI
+  createdAt     DateTime @default(now())
+}
+
+model InstitutionalAlert {
+  id            String   @id @default(cuid())
+  institutionId String
+  institution   Institution @relation(fields: [institutionId], references: [id], onDelete: Cascade)
+  type          String   // e.g., "DECLINING_MENTAL_HEALTH_TREND"
+  severity      RiskLevel
+  summary       String   // Aggregated info (e.g., "15% drop in overall mood index")
+  isResolved    Boolean  @default(false)
+  createdAt     DateTime @default(now())
+}
+
+model LaporAman {
+  id          String   @id @default(cuid())
+  // @note: No userId here to maintain total anonymity
+  subject     String
+  description String
+  category    String   // e.g., "Bullying", "Sexual Harassment"
+  status      String   @default("PENDING") // PENDING, INVESTIGATING, RESOLVED
+  institutionId String?
+  institution Institution? @relation(fields: [institutionId], references: [id])
+  logs        ReportLog[]
+  createdAt   DateTime @default(now())
+}
+
+model ReportLog {
+  id          String   @id @default(cuid())
+  reportId    String
+  report      LaporAman @relation(fields: [reportId], references: [id], onDelete: Cascade)
+  action      String   // e.g., "STATUS_CHANGED", "ADMIN_COMMENT"
+  details     String?
+  createdAt   DateTime @default(now())
+}
+
+// --- Integration (ULT & Institutions) ---
+
+model Institution {
+  id            String   @id @default(cuid())
+  name          String   @unique
+  type          String   // SCHOOL, UNIVERSITY, COMPANY, GOVERNMENT
+  users         User[]
+  subsidies     Subsidy[]
+  reports       LaporAman[]
+  webhooks      InstitutionWebhook[]
+  ult           ULT?
+}
+
+model InstitutionWebhook {
+  id          String   @id @default(cuid())
+  institutionId String
+  institution   Institution @relation(fields: [institutionId], references: [id], onDelete: Cascade)
+  url         String
+  secret      String?  // For HMAC verification
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+}
+
+model ULT {
+  id            String   @id @default(cuid())
+  name          String   @default("Pusat Layanan Terpadu")
+  institutionId String   @unique
+  institution   Institution @relation(fields: [institutionId], references: [id], onDelete: Cascade)
+  contactEmail  String?
+  contactPhone  String?
+  isActive      Boolean  @default(true)
+}
+
+model Prompt {
+  id          String   @id @default(cuid())
+  category    String   // e.g., "ANXIOUS", "SAD", "HAPPY", "STRESSED"
+  text        String
+  isPremium   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+}
