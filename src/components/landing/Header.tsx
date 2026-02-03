@@ -158,50 +158,53 @@ export const Header: React.FC<HeaderProps> = ({ variant = 'default' }) => {
                             </Link>
                         </>
                     )}
+                </div>
 
-                    {/* Mobile Toggle */}
-                    <button
-                        className={`md:hidden w-12 h-12 flex items-center justify-center rounded-2xl border transition-all duration-500 ${(variant === 'settings' || variant === 'landing') && !isScrolled ? 'bg-white/5 border-white/10 text-white' : 'bg-slate-50 border-slate-100 text-slate-900 shadow-sm'}`}
-                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    >
-                        {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
-                    </button>
+                {/* Mobile Toggle - ALWAYS VISIBLE */}
+                <button
+                    className={`md:hidden w-12 h-12 flex items-center justify-center rounded-2xl border transition-all duration-500 ${(variant === 'settings' || variant === 'landing') && !isScrolled ? 'bg-white/5 border-white/10 text-white' : 'bg-slate-50 border-slate-100 text-slate-900 shadow-sm'}`}
+                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                >
+                    {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+                </button>
+            </div>
+        </div>
+
+            {/* Mobile Menu */ }
+    {
+        mobileMenuOpen && (
+            <div className="absolute top-full left-0 right-0 bg-white border-b border-slate-100 p-6 md:hidden animate-in slide-in-from-top-4 duration-300 shadow-xl">
+                <div className="flex flex-col gap-3">
+                    {isLoggedIn ? (
+                        dashboardFeatures.map((feature) => (
+                            <Link
+                                key={feature.label}
+                                href={feature.href}
+                                onClick={() => setMobileMenuOpen(false)}
+                                className={`flex items-center justify-between p-4 rounded-2xl transition-all ${pathname === feature.href
+                                    ? "bg-indigo-50 text-indigo-600"
+                                    : "bg-slate-50 text-slate-900"
+                                    }`}
+                            >
+                                <span className="font-black uppercase text-xs tracking-widest">{feature.label}</span>
+                                <ChevronRight size={16} className={pathname === feature.href ? "text-indigo-400" : "text-slate-300"} />
+                            </Link>
+                        ))
+                    ) : (
+                        publicLinks.map((link) => (
+                            <NavLink key={link.label} label={link.label} href={link.href} mobile />
+                        ))
+                    )}
+                    {!isLoggedIn && (
+                        <Link href="/trial" onClick={() => setMobileMenuOpen(false)} className="mt-4">
+                            <Button className="bg-indigo-600 text-white w-full rounded-2xl py-7 font-black text-lg">Start Free Trial</Button>
+                        </Link>
+                    )}
                 </div>
             </div>
-
-            {/* Mobile Menu */}
-            {mobileMenuOpen && (
-                <div className="absolute top-full left-0 right-0 bg-white border-b border-slate-100 p-6 md:hidden animate-in slide-in-from-top-4 duration-300 shadow-xl">
-                    <div className="flex flex-col gap-3">
-                        {isLoggedIn ? (
-                            dashboardFeatures.map((feature) => (
-                                <Link
-                                    key={feature.label}
-                                    href={feature.href}
-                                    onClick={() => setMobileMenuOpen(false)}
-                                    className={`flex items-center justify-between p-4 rounded-2xl transition-all ${pathname === feature.href
-                                        ? "bg-indigo-50 text-indigo-600"
-                                        : "bg-slate-50 text-slate-900"
-                                        }`}
-                                >
-                                    <span className="font-black uppercase text-xs tracking-widest">{feature.label}</span>
-                                    <ChevronRight size={16} className={pathname === feature.href ? "text-indigo-400" : "text-slate-300"} />
-                                </Link>
-                            ))
-                        ) : (
-                            publicLinks.map((link) => (
-                                <NavLink key={link.label} label={link.label} href={link.href} mobile />
-                            ))
-                        )}
-                        {!isLoggedIn && (
-                            <Link href="/trial" onClick={() => setMobileMenuOpen(false)} className="mt-4">
-                                <Button className="bg-indigo-600 text-white w-full rounded-2xl py-7 font-black text-lg">Start Free Trial</Button>
-                            </Link>
-                        )}
-                    </div>
-                </div>
-            )}
-        </header>
+        )
+    }
+        </header >
     );
 };
 
