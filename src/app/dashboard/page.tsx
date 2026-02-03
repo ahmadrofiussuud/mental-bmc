@@ -36,7 +36,7 @@ export default function DashboardPage() {
 
             <main>
                 {/* 1. MASSIVE IMMERSIVE HERO SECTION */}
-                <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-50/50 pt-32 pb-20">
+                <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-slate-50/50 pt-24 sm:pt-32 pb-12 sm:pb-20">
                     {/* High-Impact Cinematic Background */}
                     <div className="absolute inset-0 z-0">
                         <div className="absolute inset-0 bg-slate-900/10 z-10" />
@@ -48,31 +48,31 @@ export default function DashboardPage() {
                         <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-slate-900 to-transparent z-20" />
                     </div>
 
-                    <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-30">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center relative z-30">
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 1, ease: "easeOut" }}
                             className="space-y-12"
                         >
-                            <div className="space-y-6">
-                                <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-5 py-2.5 rounded-full text-xs font-black uppercase tracking-[0.2em] text-indigo-300 border border-white/10 shadow-xl shadow-indigo-500/5">
+                            <div className="space-y-4 sm:space-y-6">
+                                <div className="inline-flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-md px-3 sm:px-5 py-2 sm:py-2.5 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-[0.15em] sm:tracking-[0.2em] text-indigo-300 border border-white/10 shadow-xl shadow-indigo-500/5">
                                     <Sparkles size={16} className="animate-pulse" />
                                     Premium Academic Account
                                 </div>
-                                <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-[-0.04em] leading-[1.1] drop-shadow-lg">
+                                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white tracking-[-0.04em] leading-[1.1] drop-shadow-lg">
                                     Halo, <br />
                                     <span className="text-indigo-400">Mahasiswa.</span>
                                 </h1>
-                                <p className="text-2xl text-white/70 font-medium max-w-xl leading-relaxed">
+                                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/70 font-medium max-w-xl leading-relaxed">
                                     Selamat datang kembali di ruang aman Anda. Mari kita lanjutkan perjalanan menuju ketenangan hari ini.
                                 </p>
                             </div>
 
-                            <div className="flex flex-col sm:flex-row gap-6">
-                                <Button className="bg-white hover:bg-slate-100 text-slate-900 px-12 py-10 rounded-3xl font-black text-xl shadow-2xl shadow-indigo-500/20 transition-all hover:scale-105 active:scale-95 group">
+                            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+                                <Button className="bg-white hover:bg-slate-100 text-slate-900 px-8 sm:px-10 md:px-12 py-6 sm:py-8 md:py-10 rounded-2xl sm:rounded-3xl font-black text-base sm:text-lg md:text-xl shadow-2xl shadow-indigo-500/20 transition-all hover:scale-105 active:scale-95 group">
                                     Mulai Jurnal Hari Ini
-                                    <ArrowRight size={24} className="ml-2 group-hover:translate-x-2 transition-transform" />
+                                    <ArrowRight className="ml-2 w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-2 transition-transform" />
                                 </Button>
                                 <Button
                                     variant="outline"
@@ -83,20 +83,20 @@ export default function DashboardPage() {
                                 </Button>
                             </div>
 
-                            <div className="flex items-center gap-10 pt-4 border-t border-white/10">
+                            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-10 pt-4 border-t border-white/10">
                                 <div className="space-y-1">
-                                    <p className="text-3xl font-black text-white tracking-tighter">4 Hari</p>
-                                    <p className="text-[10px] font-black uppercase tracking-widest text-white/40">Current Streak</p>
+                                    <p className="text-2xl sm:text-3xl font-black text-white tracking-tighter">4 Hari</p>
+                                    <p className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-white/40">Current Streak</p>
                                 </div>
-                                <div className="w-px h-12 bg-white/10" />
+                                <div className="hidden sm:block w-px h-12 bg-white/10" />
                                 <div className="space-y-1">
-                                    <p className="text-3xl font-black text-indigo-400 tracking-tighter">Mindful Traveler</p>
-                                    <p className="text-[10px] font-black uppercase tracking-widest text-white/40">Evolution Stage</p>
+                                    <p className="text-xl sm:text-2xl md:text-3xl font-black text-indigo-400 tracking-tighter">Mindful Traveler</p>
+                                    <p className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-white/40">Evolution Stage</p>
                                 </div>
-                                <div className="w-px h-12 bg-white/10" />
+                                <div className="hidden sm:block w-px h-12 bg-white/10" />
                                 <div className="space-y-1">
-                                    <p className="text-3xl font-black text-emerald-400 tracking-tighter">3 Sesi</p>
-                                    <p className="text-[10px] font-black uppercase tracking-widest text-white/40">Free Quota</p>
+                                    <p className="text-2xl sm:text-3xl font-black text-emerald-400 tracking-tighter">3 Sesi</p>
+                                    <p className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-white/40">Free Quota</p>
                                 </div>
                             </div>
                         </motion.div>
@@ -146,29 +146,29 @@ export default function DashboardPage() {
                 </section>
 
                 {/* 2. AI CO-PILOT SECTION - FULL WIDTH EXPERIENCE */}
-                <section className="py-40 px-6 md:px-12 bg-white">
+                <section className="py-20 sm:py-32 md:py-40 px-4 sm:px-6 md:px-12 bg-white">
                     <div className="max-w-7xl mx-auto space-y-20">
                         <div className="max-w-3xl space-y-6">
                             <Badge className="bg-indigo-50 text-indigo-600 hover:bg-indigo-50 px-5 py-2 rounded-full font-black uppercase text-xs tracking-widest border-indigo-100">
                                 AI Companion
                             </Badge>
-                            <h2 className="text-6xl md:text-8xl font-black text-slate-900 tracking-tighter leading-[0.9]">
+                            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-slate-900 tracking-tighter leading-[0.9]">
                                 Teman Chat <br />
                                 <span className="text-indigo-600 italic">Tanpa Menghakimi.</span>
                             </h2>
-                            <p className="text-xl text-slate-500 font-medium leading-relaxed">
+                            <p className="text-base sm:text-lg md:text-xl text-slate-500 font-medium leading-relaxed">
                                 Teknologi screening berbasis CBT yang memahami Anda secara mendalam. AI kami siap mendengarkan 24/7 dan memberikan ringkasan diagnostik untuk profesional jika Anda membutuhkannya.
                             </p>
                         </div>
 
-                        <div className="bg-slate-900 rounded-[60px] p-4 md:p-12 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)]">
+                        <div className="bg-slate-900 rounded-3xl sm:rounded-[40px] md:rounded-[60px] p-3 sm:p-6 md:p-12 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)]">
                             <GeminiChat />
                         </div>
                     </div>
                 </section>
 
                 {/* 3. SMART JOURNALING SECTION - AIRY LAYOUT */}
-                <section className="py-40 px-6 md:px-12 bg-slate-50">
+                <section className="py-20 sm:py-32 md:py-40 px-4 sm:px-6 md:px-12 bg-slate-50">
                     <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
                         <div className="relative">
                             <motion.div
