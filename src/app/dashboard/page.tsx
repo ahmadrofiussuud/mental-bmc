@@ -37,7 +37,7 @@ export default function DashboardPage() {
 
             <main>
                 {/* 1. MASSIVE IMMERSIVE HERO SECTION */}
-                <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-slate-50/50 pt-24 sm:pt-32 pb-12 sm:pb-20">
+                <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-slate-50/50 pt-32 sm:pt-40 pb-12 sm:pb-20">
                     {/* High-Impact Cinematic Background */}
                     <div className="absolute inset-0 z-0">
                         <div className="absolute inset-0 bg-slate-900/10 z-10" />

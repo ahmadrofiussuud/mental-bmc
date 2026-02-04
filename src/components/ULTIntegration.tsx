@@ -26,7 +26,7 @@ export default function ULTIntegration() {
                 <div className="bg-white rounded-[50px] shadow-2xl shadow-slate-200/80 border border-slate-100 overflow-hidden">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
                         {/* LEFT: Visual/Illustration */}
-                        <div className="relative bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 p-12 md:p-16 flex items-center justify-center overflow-hidden">
+                        <div className="relative bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 p-6 md:p-16 flex items-center justify-center overflow-hidden">
                             {/* Decorative Elements */}
                             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
                             <div className="absolute bottom-0 left-0 w-48 h-48 bg-purple-400/20 rounded-full blur-2xl" />
@@ -99,7 +99,7 @@ export default function ULTIntegration() {
                         </div>
 
                         {/* RIGHT: Content */}
-                        <div className="p-12 md:p-16 flex flex-col justify-center">
+                        <div className="p-6 md:p-16 flex flex-col justify-center">
                             <div className="space-y-8">
                                 {/* Title */}
                                 <div>

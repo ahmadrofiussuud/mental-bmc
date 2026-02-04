@@ -83,7 +83,8 @@ export default function HybridChatSystem() {
     const chatColor = chatMode === "counselor" ? "indigo" : "emerald";
 
     return (
-        <section className="py-20 px-6 md:px-12 bg-gradient-to-b from-slate-50 to-white">
+    return (
+        <section className="py-20 px-4 md:px-12 bg-gradient-to-b from-slate-50 to-white">
             <div className="max-w-6xl mx-auto space-y-12">
                 {/* Header */}
                 <div className="text-center space-y-4">
@@ -103,12 +104,12 @@ export default function HybridChatSystem() {
                 <div className="bg-white rounded-[40px] shadow-2xl shadow-slate-200/80 border border-slate-100 overflow-hidden">
                     {/* Tab Switcher */}
                     <div className="bg-slate-50 border-b border-slate-200 p-4">
-                        <div className="flex gap-3 max-w-md mx-auto">
+                        <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                             <button
                                 onClick={() => setChatMode("counselor")}
                                 className={`flex-1 flex items-center justify-center gap-2 px-6 py-4 rounded-2xl font-black text-sm transition-all ${chatMode === "counselor"
-                                        ? "bg-indigo-600 text-white shadow-lg shadow-indigo-500/30"
-                                        : "bg-white text-slate-500 hover:bg-slate-100"
+                                    ? "bg-indigo-600 text-white shadow-lg shadow-indigo-500/30"
+                                    : "bg-white text-slate-500 hover:bg-slate-100"
                                     }`}
                             >
                                 <Stethoscope size={18} />
@@ -117,8 +118,8 @@ export default function HybridChatSystem() {
                             <button
                                 onClick={() => setChatMode("community")}
                                 className={`flex-1 flex items-center justify-center gap-2 px-6 py-4 rounded-2xl font-black text-sm transition-all ${chatMode === "community"
-                                        ? "bg-emerald-600 text-white shadow-lg shadow-emerald-500/30"
-                                        : "bg-white text-slate-500 hover:bg-slate-100"
+                                    ? "bg-emerald-600 text-white shadow-lg shadow-emerald-500/30"
+                                    : "bg-white text-slate-500 hover:bg-slate-100"
                                     }`}
                             >
                                 <Users size={18} />
@@ -164,7 +165,7 @@ export default function HybridChatSystem() {
                     </AnimatePresence>
 
                     {/* Messages Container */}
-                    <div className="h-[500px] overflow-y-auto bg-slate-50 p-6 space-y-4">
+                    <div className="h-[60vh] sm:h-[500px] overflow-y-auto bg-slate-50 p-4 sm:p-6 space-y-4">
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={chatMode}
@@ -199,10 +200,10 @@ export default function HybridChatSystem() {
                                                 )}
                                                 <div
                                                     className={`px-5 py-3.5 rounded-2xl ${message.sender === "user"
-                                                            ? chatMode === "counselor"
-                                                                ? "bg-indigo-600 text-white rounded-br-md"
-                                                                : "bg-emerald-600 text-white rounded-br-md"
-                                                            : "bg-white border border-slate-200 text-slate-800 rounded-bl-md shadow-sm"
+                                                        ? chatMode === "counselor"
+                                                            ? "bg-indigo-600 text-white rounded-br-md"
+                                                            : "bg-emerald-600 text-white rounded-br-md"
+                                                        : "bg-white border border-slate-200 text-slate-800 rounded-bl-md shadow-sm"
                                                         }`}
                                                 >
                                                     <p className="text-sm md:text-base font-medium leading-relaxed">{message.content}</p>

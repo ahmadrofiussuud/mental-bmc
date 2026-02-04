@@ -97,7 +97,7 @@ export default function WalletPage() {
                         >
                             <div className="relative group cursor-pointer h-[450px]">
                                 {/* The Card itself */}
-                                <div className="absolute inset-0 bg-slate-900/90 backdrop-blur-3xl rounded-[50px] shadow-[0_120px_180px_-40px_rgba(37,99,235,0.3)] p-14 text-white flex flex-col justify-between overflow-hidden border border-white/10 transform-gpu transition-all duration-700 group-hover:rotate-y-6 group-hover:rotate-x-6 group-hover:scale-105">
+                                <div className="absolute inset-0 bg-slate-900/90 backdrop-blur-3xl rounded-[50px] shadow-[0_120px_180px_-40px_rgba(37,99,235,0.3)] p-6 sm:p-10 md:p-14 text-white flex flex-col justify-between overflow-hidden border border-white/10 transform-gpu transition-all duration-700 group-hover:rotate-y-6 group-hover:rotate-x-6 group-hover:scale-105">
 
                                     {/* Holographic/Gradient Effect */}
                                     <div className="absolute inset-0 bg-gradient-to-br from-blue-600/30 via-transparent to-emerald-500/20 opacity-60" />
