@@ -295,42 +295,41 @@ export default function HybridChatSystem() {
 
                     {/* Scroll Anchor */}
                     <div ref={messagesEndRef} />
-                </div>
 
-                {/* Message Input */}
-                <div className="bg-white border-t border-slate-200 p-4">
-                    <div className="flex gap-3 items-center">
-                        <input
-                            type="text"
-                            value={inputValue}
-                            onChange={(e) => setInputValue(e.target.value)}
-                            onKeyPress={handleKeyPress}
-                            disabled={isLoading || chatMode !== "counselor"}
-                            placeholder={chatMode === "counselor" ? "Ketik pesan Anda..." : "Chat Komunitas (Coming Soon)"}
-                            className="flex-1 bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-slate-900 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
-                        />
-                        <Button
-                            onClick={sendMessage}
-                            disabled={isLoading || !inputValue.trim() || chatMode !== "counselor"}
-                            className={`rounded-2xl px-6 py-4 font-black ${chatMode === "counselor" ? "bg-indigo-600 hover:bg-indigo-700" : "bg-emerald-600 hover:bg-emerald-700"
-                                } text-white transition-all hover:scale-105 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100`}
-                        >
-                            <Send size={20} />
-                        </Button>
+                    {/* Message Input */}
+                    <div className="bg-white border-t border-slate-200 p-4">
+                        <div className="flex gap-3 items-center">
+                            <input
+                                type="text"
+                                value={inputValue}
+                                onChange={(e) => setInputValue(e.target.value)}
+                                onKeyPress={handleKeyPress}
+                                disabled={isLoading || chatMode !== "counselor"}
+                                placeholder={chatMode === "counselor" ? "Ketik pesan Anda..." : "Chat Komunitas (Coming Soon)"}
+                                className="flex-1 bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-slate-900 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                            />
+                            <Button
+                                onClick={sendMessage}
+                                disabled={isLoading || !inputValue.trim() || chatMode !== "counselor"}
+                                className={`rounded-2xl px-6 py-4 font-black ${chatMode === "counselor" ? "bg-indigo-600 hover:bg-indigo-700" : "bg-emerald-600 hover:bg-emerald-700"
+                                    } text-white transition-all hover:scale-105 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100`}
+                            >
+                                <Send size={20} />
+                            </Button>
+                        </div>
+                        <p className="text-xs text-slate-400 font-medium mt-2 text-center">
+                            🔒 End-to-End Encrypted • 100% Confidential
+                        </p>
                     </div>
-                    <p className="text-xs text-slate-400 font-medium mt-2 text-center">
-                        🔒 End-to-End Encrypted • 100% Confidential
-                    </p>
+                </div>
+
+                {/* Bottom CTA */}
+                <div className="text-center">
+                    <Button className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-10 py-6 rounded-2xl font-black text-lg shadow-xl shadow-purple-500/30 transition-all hover:scale-105">
+                        Mulai Chat Sekarang
+                    </Button>
                 </div>
             </div>
-
-            {/* Bottom CTA */}
-            <div className="text-center">
-                <Button className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-10 py-6 rounded-2xl font-black text-lg shadow-xl shadow-purple-500/30 transition-all hover:scale-105">
-                    Mulai Chat Sekarang
-                </Button>
-            </div>
-        </div>
-        </section >
+        </section>
     );
 }
