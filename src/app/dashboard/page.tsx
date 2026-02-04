@@ -83,7 +83,7 @@ export default function DashboardPage() {
                                 </Button>
                             </div>
 
-                            <div className="flex flex-row items-center gap-4 sm:gap-6 md:gap-10 pt-4 border-t border-white/10 overflow-x-auto">
+                            <div className="flex flex-row items-center gap-4 sm:gap-6 md:gap-10 pt-4 border-t border-white/10">
                                 <div className="space-y-1 shrink-0">
                                     <p className="text-xl sm:text-2xl md:text-3xl font-black text-white tracking-tighter">4 Hari</p>
                                     <p className="text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-white/40">Current Streak</p>
