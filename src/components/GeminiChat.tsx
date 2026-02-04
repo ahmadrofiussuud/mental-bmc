@@ -195,11 +195,12 @@ export const GeminiChat = () => {
                         <div className="flex gap-4">
                             <form onSubmit={handleSubmit} className="flex-1 flex gap-4">
                                 <div className="flex-1 relative">
-                                    className="w-full bg-slate-50 border-2 border-slate-100 rounded-[28px] pl-6 sm:pl-8 pr-16 py-4 sm:py-6 text-base sm:text-lg font-bold text-slate-900 focus:border-indigo-500 focus:bg-white outline-none transition-all shadow-inner placeholder:text-slate-300"
-                                    value={input}
-                                    placeholder="Tuliskan perasaan..."
-                                    onChange={handleInputChange}
-                                    disabled={isLoading}
+                                    <input
+                                        className="w-full bg-slate-50 border-2 border-slate-100 rounded-[28px] pl-6 sm:pl-8 pr-16 py-4 sm:py-6 text-base sm:text-lg font-bold text-slate-900 focus:border-indigo-500 focus:bg-white outline-none transition-all shadow-inner placeholder:text-slate-300"
+                                        value={input}
+                                        placeholder="Tuliskan perasaan..."
+                                        onChange={handleInputChange}
+                                        disabled={isLoading}
                                     />
                                     <div className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-300">
                                         {input.length > 0 && <span className="text-[10px] font-black">{input.length} char</span>}
