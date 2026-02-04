@@ -14,7 +14,7 @@ export default function InstitutionsPage() {
                             Dukungan <br /> Berbasis <br /><span className="text-indigo-600">Institusi.</span>
                         </h1>
                         <p className="text-base sm:text-lg md:text-xl text-slate-500 font-medium leading-relaxed italic">
-                            TenangIn bermitra dengan Universitas, Sekolah, dan Perusahaan untuk membangun lingkungan yang sehat secara emosional.
+                            TenangIn bermitra dengan Universitas (MBKM), Fakultas (Satgas), dan Perusahaan untuk membangun lingkungan yang sehat secara emosional.
                         </p>
                     </div>
 

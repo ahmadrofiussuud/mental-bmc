@@ -27,13 +27,13 @@ export default function SolutionsPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                         <SolutionCard
                             icon={<Lightbulb className="text-amber-500" size={40} />}
-                            title="CBT AI Integration"
-                            description="Integrasi AI yang dilatih dengan prinsip Cognitive Behavioral Therapy untuk memberikan dukungan emosional 24/7."
+                            title="CBT AI Co-Pilot"
+                            description="Meningkatkan efisiensi sesi konseling hingga 40% melalui rangkuman otomatis kondisi mental pengguna berbasis CBT & Mindfulness."
                         />
                         <SolutionCard
                             icon={<Target className="text-indigo-500" size={40} />}
                             title="Risk Analysis Dashboard"
-                            description="Monitor tren kesehatan mental komunitas secara agregat tanpa melanggar privasi individu."
+                            description="Menganalisis pola emosi secara otomatis melalui Early Warning System (EWS) untuk deteksi risiko tinggi."
                         />
                         <SolutionCard
                             icon={<Users className="text-emerald-500" size={40} />}
@@ -43,7 +43,7 @@ export default function SolutionsPage() {
                         <SolutionCard
                             icon={<BarChart4 className="text-rose-500" size={40} />}
                             title="Institutional Insights"
-                            description="Laporan berkala tentang tingkat kebahagiaan dan produktivitas komunitas Anda."
+                            description="Menyediakan data analitik untuk mendeteksi tren penurunan kesehatan mental massal secara dini melalui data agregat anonim."
                         />
                     </div>
 
