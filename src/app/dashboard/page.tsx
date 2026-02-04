@@ -31,7 +31,7 @@ export default function DashboardPage() {
     const router = useRouter();
 
     return (
-        <div className="min-h-screen bg-white selection:bg-indigo-100 selection:text-indigo-600">
+        <div className="min-h-screen bg-white selection:bg-indigo-100 selection:text-indigo-600 overflow-x-hidden">
             <Header variant="landing" />
 
             <main>
