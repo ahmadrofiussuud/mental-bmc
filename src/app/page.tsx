@@ -39,14 +39,14 @@ export default function LandingPage() {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 w-full relative z-10 text-center lg:text-left">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
-              <div className="space-y-6 sm:space-y-8 lg:space-y-12 pt-32 sm:pt-36 md:pt-40 lg:pt-28 xl:pt-20">
+              <div className="space-y-6 sm:space-y-8 lg:space-y-12 pt-24 sm:pt-28 md:pt-32 lg:pt-28 xl:pt-20">
                 <div className="space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12">
                   <div className="inline-flex items-center gap-2 sm:gap-3 md:gap-4 bg-white/10 backdrop-blur-xl border border-white/20 px-3 sm:px-5 md:px-8 py-1.5 sm:py-2 md:py-3 rounded-full text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-black uppercase tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.4em] text-white shadow-2xl animate-fade-in">
                     <Sparkles size={14} className="sm:w-4 sm:h-4 md:w-5 md:h-5 animate-pulse text-indigo-300" />
                     The Future of Mental Peace
                   </div>
 
-                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-[-0.03em] sm:tracking-[-0.04em] leading-[1.4] sm:leading-[1.35] md:leading-[1.3] lg:leading-[1.25] drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white tracking-[-0.03em] sm:tracking-[-0.04em] leading-[1.4] sm:leading-[1.35] md:leading-[1.3] lg:leading-[1.25] drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
                     Mulai <br />
                     <span className="text-white/40 italic">Ketangguhan.</span>
                   </h1>
