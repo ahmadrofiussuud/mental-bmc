@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { GeminiChat } from "@/components/GeminiChat";
 import { ResilienceJourney } from "@/components/ResilienceJourney";
 import { AvatarEvolution } from "@/components/AvatarEvolution";
+import ULTIntegration from "@/components/ULTIntegration";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
@@ -351,6 +352,9 @@ export default function DashboardPage() {
                         </div>
                     </div>
                 </section>
+
+                {/* ULT SEAMLESS INTEGRATION SECTION */}
+                <ULTIntegration />
             </main>
 
             <Footer />
