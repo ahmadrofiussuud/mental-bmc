@@ -149,11 +149,13 @@ export const Header: React.FC<HeaderProps> = ({ variant = 'default' }) => {
                     ) : (
                         <>
                             <Link href="/login">
-                                <Button variant="ghost" className="font-black text-white hover:text-indigo-200 px-4 sm:px-6">Login</Button>
+                                <Button variant="ghost" className={`font-black px-4 sm:px-6 ${(variant === 'landing' || variant === 'settings') && !isScrolled ? 'text-white hover:text-white hover:bg-white/10' : 'text-slate-900 hover:text-indigo-600 hover:bg-slate-50'}`}>
+                                    Login
+                                </Button>
                             </Link>
-                            <Link href="/trial" className="hidden sm:block">
-                                <Button className="bg-slate-900 hover:bg-black text-white px-8 h-12 rounded-2xl font-black shadow-lg shadow-slate-200 transition-all hover:scale-105 active:scale-95">
-                                    Get Trial
+                            <Link href="/login">
+                                <Button className={`px-6 sm:px-8 h-11 sm:h-12 rounded-2xl font-black shadow-lg transition-all hover:scale-105 active:scale-95 ${(variant === 'landing' || variant === 'settings') && !isScrolled ? 'bg-white text-indigo-600 hover:bg-white/90 shadow-white/20' : 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200'}`}>
+                                    Mulai Gratis
                                 </Button>
                             </Link>
                         </>
@@ -194,9 +196,18 @@ export const Header: React.FC<HeaderProps> = ({ variant = 'default' }) => {
                             ))
                         )}
                         {!isLoggedIn && (
-                            <Link href="/trial" onClick={() => setMobileMenuOpen(false)} className="mt-4">
-                                <Button className="bg-indigo-600 text-white w-full rounded-2xl py-7 font-black text-lg">Start Free Trial</Button>
-                            </Link>
+                            <div className="flex flex-col gap-3 mt-4">
+                                <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
+                                    <Button variant="outline" className="w-full rounded-2xl py-6 font-black text-base border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50">
+                                        Login
+                                    </Button>
+                                </Link>
+                                <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
+                                    <Button className="bg-indigo-600 text-white w-full rounded-2xl py-6 font-black text-base hover:bg-indigo-700">
+                                        Mulai Gratis
+                                    </Button>
+                                </Link>
+                            </div>
                         )}
                     </div>
                 </div>
