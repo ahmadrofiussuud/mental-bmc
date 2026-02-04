@@ -46,12 +46,12 @@ export default function LandingPage() {
                     The Future of Mental Peace
                   </div>
 
-                  <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl xl:text-9xl font-black text-white tracking-[-0.03em] sm:tracking-[-0.04em] leading-[1.35] sm:leading-[1.3] md:leading-[1.2] lg:leading-[1.15] drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] sm:drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-[-0.03em] sm:tracking-[-0.04em] leading-[1.4] sm:leading-[1.35] md:leading-[1.3] lg:leading-[1.25] drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
                     Mulai <br />
                     <span className="text-white/40 italic">Ketangguhan.</span>
                   </h1>
 
-                  <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white/70 font-medium max-w-xl leading-relaxed">
+                  <p className="text-xs sm:text-sm md:text-base lg:text-base xl:text-lg text-white/70 font-medium max-w-xl leading-relaxed">
                     Personalized AI-CBT Companion & Mental Identity Monitoring. <br className="hidden md:block" />
                     Membangun ketenangan dalam setiap langkah digital Anda.
                   </p>
