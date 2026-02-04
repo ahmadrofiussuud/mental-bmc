@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, Users, Stethoscope, Send, MoreVertical } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -17,30 +17,15 @@ interface Message {
     time: string;
 }
 
-const counselorMessages: Message[] = [
-    {
-        id: 1,
-        sender: "counselor",
-        name: "Dr. Sarah Chen",
-        avatar: "SC",
-        content: "Selamat datang! Saya Dr. Sarah, psikolog klinis tersertifikasi. Bagaimana perasaan Anda hari ini?",
-        time: "14:32"
-    },
-    {
-        id: 2,
-        sender: "user",
-        content: "Saya merasa cemas menjelang ujian akhir semester...",
-        time: "14:33"
-    },
-    {
-        id: 3,
-        sender: "counselor",
-        name: "Dr. Sarah Chen",
-        avatar: "SC",
-        content: "Saya memahami. Kecemasan pre-exam adalah hal yang umum. Mari kita eksplorasi bersama dengan teknik CBT untuk mengelola kecemasan Anda secara efektif.",
-        time: "14:35"
-    }
-];
+// Initial welcome message
+const INITIAL_MESSAGE: Message = {
+    id: 1,
+    sender: "counselor",
+    name: "Dr. Aria",
+    avatar: "AR",
+    content: "Halo, saya Dr. Aria. Terima kasih sudah mempercayai TenangIn untuk berbagi. Sebelum kita mulai, boleh saya tahu apa yang sedang Anda rasakan saat ini? Tidak apa-apa untuk mengambil waktu menjawab.",
+    time: new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })
+};
 
 const communityMessages: Message[] = [
     {
@@ -77,12 +62,85 @@ const communityMessages: Message[] = [
 
 export default function HybridChatSystem() {
     const [chatMode, setChatMode] = useState<ChatMode>("counselor");
-    const [isTyping, setIsTyping] = useState(true);
+    const [messages, setMessages] = useState<Message[]>([INITIAL_MESSAGE]);
+    const [inputValue, setInputValue] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
+    const [isTyping, setIsTyping] = useState(false);
+    const messagesEndRef = useRef<HTMLDivElement>(null);
+    const nextId = useRef(2);
 
-    const messages = chatMode === "counselor" ? counselorMessages : communityMessages;
+    // Auto-scroll to bottom when new messages arrive
+    useEffect(() => {
+        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, [messages, isTyping]);
+
+    const sendMessage = async () => {
+        if (!inputValue.trim() || isLoading || chatMode !== "counselor") return;
+
+        const userMessage: Message = {
+            id: nextId.current++,
+            sender: "user",
+            content: inputValue.trim(),
+            time: new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })
+        };
+
+        setMessages(prev => [...prev, userMessage]);
+        setInputValue("");
+        setIsLoading(true);
+        setIsTyping(true);
+
+        try {
+            const response = await fetch('/api/ai-chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    message: userMessage.content,
+                    conversationHistory: messages
+                })
+            });
+
+            if (!response.ok) throw new Error('Failed to get response');
+
+            const data = await response.json();
+
+            const aiMessage: Message = {
+                id: nextId.current++,
+                sender: "counselor",
+                name: "Dr. Aria",
+                avatar: "AR",
+                content: data.message,
+                time: new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })
+            };
+
+            setMessages(prev => [...prev, aiMessage]);
+        } catch (error) {
+            console.error('Chat error:', error);
+            const errorMessage: Message = {
+                id: nextId.current++,
+                sender: "counselor",
+                name: "Dr. Aria",
+                avatar: "AR",
+                content: "Maaf, saya mengalami kendala teknis. Silakan coba lagi atau hubungi konselor manusia kami.",
+                time: new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })
+            };
+            setMessages(prev => [...prev, errorMessage]);
+        } finally {
+            setIsLoading(false);
+            setIsTyping(false);
+        }
+    };
+
+    const handleKeyPress = (e: React.KeyboardEvent) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            sendMessage();
+        }
+    };
+
+    // Display appropriate messages based on chat mode
+    const displayMessages = chatMode === "counselor" ? messages : communityMessages;
     const chatColor = chatMode === "counselor" ? "indigo" : "emerald";
 
-    return (
     return (
         <section className="py-20 px-4 md:px-12 bg-gradient-to-b from-slate-50 to-white">
             <div className="max-w-6xl mx-auto space-y-12">
@@ -147,7 +205,7 @@ export default function HybridChatSystem() {
                                     </div>
                                     <div>
                                         <h3 className="text-xl font-black text-slate-900">
-                                            {chatMode === "counselor" ? "Dr. Sarah Chen, M.Psi" : "Mental Health Community"}
+                                            {chatMode === "counselor" ? "Dr. Aria, M.Psi" : "Mental Health Community"}
                                         </h3>
                                         <div className="flex items-center gap-2 mt-1">
                                             <div className={`w-2.5 h-2.5 rounded-full ${chatMode === "counselor" ? "bg-emerald-500" : "bg-emerald-500"} animate-pulse`} />
@@ -174,7 +232,7 @@ export default function HybridChatSystem() {
                                 exit={{ opacity: 0 }}
                                 className="space-y-4"
                             >
-                                {messages.map((message, index) => (
+                                {displayMessages.map((message, index) => (
                                     <motion.div
                                         key={message.id}
                                         initial={{ opacity: 0, y: 20 }}
@@ -220,7 +278,7 @@ export default function HybridChatSystem() {
                                 {isTyping && (
                                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex gap-3">
                                         <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-white font-black text-xs ${chatMode === "counselor" ? "bg-indigo-500" : "bg-emerald-500"}`}>
-                                            {chatMode === "counselor" ? "SC" : "AI"}
+                                            {chatMode === "counselor" ? "AR" : "AI"}
                                         </div>
                                         <div className="bg-white border border-slate-200 px-5 py-3.5 rounded-2xl rounded-bl-md shadow-sm">
                                             <div className="flex gap-1.5">
@@ -235,33 +293,44 @@ export default function HybridChatSystem() {
                         </AnimatePresence>
                     </div>
 
-                    {/* Message Input (Disabled - Simulation) */}
-                    <div className="bg-white border-t border-slate-200 p-4">
-                        <div className="flex gap-3 items-center">
-                            <div className="flex-1 bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-slate-400 font-medium text-sm">
-                                Ketik pesan Anda... (Demo Mode)
-                            </div>
-                            <Button
-                                disabled
-                                className={`rounded-2xl px-6 py-4 font-black ${chatMode === "counselor" ? "bg-indigo-600 hover:bg-indigo-700" : "bg-emerald-600 hover:bg-emerald-700"
-                                    } text-white opacity-40 cursor-not-allowed`}
-                            >
-                                <Send size={20} />
-                            </Button>
-                        </div>
-                        <p className="text-xs text-slate-400 font-medium mt-2 text-center">
-                            🔒 End-to-End Encrypted • 100% Confidential
-                        </p>
-                    </div>
+                    {/* Scroll Anchor */}
+                    <div ref={messagesEndRef} />
                 </div>
 
-                {/* Bottom CTA */}
-                <div className="text-center">
-                    <Button className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-10 py-6 rounded-2xl font-black text-lg shadow-xl shadow-purple-500/30 transition-all hover:scale-105">
-                        Mulai Chat Sekarang
-                    </Button>
+                {/* Message Input */}
+                <div className="bg-white border-t border-slate-200 p-4">
+                    <div className="flex gap-3 items-center">
+                        <input
+                            type="text"
+                            value={inputValue}
+                            onChange={(e) => setInputValue(e.target.value)}
+                            onKeyPress={handleKeyPress}
+                            disabled={isLoading || chatMode !== "counselor"}
+                            placeholder={chatMode === "counselor" ? "Ketik pesan Anda..." : "Chat Komunitas (Coming Soon)"}
+                            className="flex-1 bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-slate-900 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                        />
+                        <Button
+                            onClick={sendMessage}
+                            disabled={isLoading || !inputValue.trim() || chatMode !== "counselor"}
+                            className={`rounded-2xl px-6 py-4 font-black ${chatMode === "counselor" ? "bg-indigo-600 hover:bg-indigo-700" : "bg-emerald-600 hover:bg-emerald-700"
+                                } text-white transition-all hover:scale-105 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100`}
+                        >
+                            <Send size={20} />
+                        </Button>
+                    </div>
+                    <p className="text-xs text-slate-400 font-medium mt-2 text-center">
+                        🔒 End-to-End Encrypted • 100% Confidential
+                    </p>
                 </div>
             </div>
-        </section>
+
+            {/* Bottom CTA */}
+            <div className="text-center">
+                <Button className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-10 py-6 rounded-2xl font-black text-lg shadow-xl shadow-purple-500/30 transition-all hover:scale-105">
+                    Mulai Chat Sekarang
+                </Button>
+            </div>
+        </div>
+        </section >
     );
 }
