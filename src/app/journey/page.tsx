@@ -20,7 +20,7 @@ import {
 
 export default function JourneyPage() {
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-white overflow-x-hidden">
             <Header variant="landing" />
 
             <main>
@@ -123,11 +123,11 @@ export default function JourneyPage() {
                 </section>
 
                 {/* 3. MILESTONES ROADMAP */}
-                <section className="py-40 px-6 md:px-12 bg-slate-50">
+                <section className="py-12 sm:py-20 md:py-40 px-6 md:px-12 bg-slate-50">
                     <div className="max-w-7xl mx-auto space-y-32">
-                        <div className="text-center space-y-6">
-                            <h2 className="text-6xl font-black text-slate-900 tracking-tighter">Jejak Perubahan.</h2>
-                            <p className="text-xl text-slate-500 font-medium italic">Milestone harian yang membentuk masa depan Anda.</p>
+                        <div className="text-center space-y-4 sm:space-y-6">
+                            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 tracking-tighter">Jejak Perubahan.</h2>
+                            <p className="text-base sm:text-lg md:text-xl text-slate-500 font-medium italic">Milestone harian yang membentuk masa depan Anda.</p>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -158,11 +158,11 @@ export default function JourneyPage() {
 
                 {/* 4. CALL TO ACTION */}
                 <section className="py-20 px-6 md:px-12 bg-white">
-                    <div className="max-w-5xl mx-auto bg-slate-900 rounded-[60px] p-20 text-center space-y-10 text-white shadow-2xl overflow-hidden relative">
+                    <div className="max-w-5xl mx-auto bg-slate-900 rounded-[40px] sm:rounded-[60px] p-8 sm:p-12 md:p-20 text-center space-y-6 sm:space-y-8 md:space-y-10 text-white shadow-2xl overflow-hidden relative">
                         <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/20 to-transparent pointer-events-none" />
-                        <HeartPulse size={80} className="mx-auto text-indigo-400 opacity-50 mb-4" />
-                        <h2 className="text-5xl md:text-7xl font-black tracking-tighter">Sudah Siap Melangkah <br /> Lebih Jauh?</h2>
-                        <p className="text-xl text-indigo-200 font-medium max-w-xl mx-auto opacity-70">
+                        <HeartPulse className="mx-auto text-indigo-400 opacity-50 mb-4 w-16 h-16 sm:w-20 sm:h-20" />
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black tracking-tighter">Sudah Siap Melangkah <br /> Lebih Jauh?</h2>
+                        <p className="text-base sm:text-lg md:text-xl text-indigo-200 font-medium max-w-xl mx-auto opacity-70">
                             Setiap Milestone kecil adalah kemenangan besar bagi kesehatan mental Anda. Teruslah tumbuh.
                         </p>
                         <Button className="bg-white text-slate-900 hover:bg-slate-100 px-8 sm:px-12 md:px-16 py-6 sm:py-8 md:py-10 rounded-3xl font-black text-base sm:text-xl md:text-2xl uppercase tracking-normal sm:tracking-wide transition-all">

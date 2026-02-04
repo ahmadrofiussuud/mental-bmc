@@ -191,14 +191,14 @@ export const GeminiChat = () => {
                     </AnimatePresence>
 
                     {/* Integrated Controls */}
-                    <div className="p-6 bg-white border-t border-slate-100 flex flex-col gap-4">
+                    <div className="p-3 sm:p-4 md:p-6 bg-white border-t border-slate-100 flex flex-col gap-3 sm:gap-4">
                         <div className="flex gap-4">
                             <form onSubmit={handleSubmit} className="flex-1 flex gap-4">
                                 <div className="flex-1 relative">
                                     <input
                                         className="w-full bg-slate-50 border-2 border-slate-100 rounded-[28px] pl-6 sm:pl-8 pr-16 py-4 sm:py-6 text-base sm:text-lg font-bold text-slate-900 focus:border-indigo-500 focus:bg-white outline-none transition-all shadow-inner placeholder:text-slate-300"
                                         value={input}
-                                        placeholder="Tuliskan perasaan..."
+                                        placeholder="Tulis perasaan..."
                                         onChange={handleInputChange}
                                         disabled={isLoading}
                                     />
