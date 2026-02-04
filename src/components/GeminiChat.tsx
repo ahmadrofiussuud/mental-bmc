@@ -54,11 +54,11 @@ export const GeminiChat = () => {
         >
             <Card className="h-[750px] flex flex-col shadow-[0_32px_64px_-12px_rgba(0,0,0,0.1)] rounded-[40px] overflow-hidden border-none bg-white/80 backdrop-blur-xl ring-1 ring-slate-100">
                 {/* Header with Glassmorphism */}
-                <CardHeader className="bg-slate-900 text-white p-8 space-y-6">
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                        <div className="flex items-center gap-4">
-                            <div className="w-14 h-14 bg-indigo-600 rounded-2xl flex items-center justify-center shadow-lg shadow-indigo-500/30">
-                                <BrainCircuit size={32} />
+                <CardHeader className="bg-slate-900 text-white p-4 sm:p-6 md:p-8 space-y-4 md:space-y-6">
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
+                        <div className="flex items-center gap-3 sm:gap-4">
+                            <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-indigo-600 rounded-2xl flex items-center justify-center shadow-lg shadow-indigo-500/30">
+                                <BrainCircuit className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8" />
                             </div>
                             <div>
                                 <CardTitle className="text-lg sm:text-xl md:text-2xl font-black tracking-tighter">TenangIn Co-Pilot</CardTitle>
@@ -67,7 +67,7 @@ export const GeminiChat = () => {
                         </div>
 
                         {/* Tier Selection (Hybrid System) */}
-                        <div className="flex bg-white/10 p-1.5 rounded-[22px] backdrop-blur-md">
+                        <div className="flex bg-white/10 p-1 sm:p-1.5 rounded-2xl sm:rounded-[22px] backdrop-blur-md">
                             <TierButton
                                 active={tier === 'AI'}
                                 onClick={() => setTier('AI')}
