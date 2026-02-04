@@ -128,7 +128,7 @@ export const ResilienceJourney: React.FC<ResilienceJourneyProps> = ({ userXP, le
                             />
                         </div>
 
-                        <div className="bg-indigo-50/50 p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl border border-indigo-100/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
+                        <div className="bg-indigo-50/50 p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl border border-indigo-100/50 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
                             <div className="flex items-center gap-3 sm:gap-4">
                                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-xl sm:rounded-2xl flex items-center justify-center text-indigo-600 shadow-sm shrink-0">
                                     <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -138,7 +138,7 @@ export const ResilienceJourney: React.FC<ResilienceJourneyProps> = ({ userXP, le
                                     <p className="text-[11px] sm:text-xs font-bold text-slate-500 italic">4 Days In A Row!</p>
                                 </div>
                             </div>
-                            <Button className="bg-indigo-600 hover:bg-slate-900 text-white rounded-xl sm:rounded-2xl font-black text-[10px] sm:text-xs uppercase px-4 sm:px-6 py-2 sm:py-2.5 whitespace-nowrap">
+                            <Button className="bg-indigo-600 hover:bg-slate-900 text-white rounded-xl sm:rounded-2xl font-black text-[10px] sm:text-xs uppercase px-4 sm:px-6 py-2 sm:py-2.5 whitespace-nowrap w-full sm:w-auto">
                                 Claim Bonus
                             </Button>
                         </div>
