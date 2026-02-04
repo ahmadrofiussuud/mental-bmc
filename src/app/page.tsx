@@ -62,9 +62,6 @@ export default function LandingPage() {
                     Mulai Sesi Gratis
                     <ArrowRight className="ml-1.5 sm:ml-2 md:ml-4 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 group-hover:translate-x-4 transition-transform text-indigo-600" />
                   </Button>
-                  <Button variant="outline" className="border-2 border-white/20 text-white hover:bg-white/10 px-8 sm:px-12 md:px-16 py-6 sm:py-8 md:py-10 rounded-3xl font-black text-base sm:text-xl md:text-2xl uppercase tracking-normal sm:tracking-wide transition-all">
-                    Lihat Demo
-                  </Button>
                 </div>
 
                 {/* Social Proof Cluster */}
