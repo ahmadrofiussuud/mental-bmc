@@ -241,7 +241,7 @@ export const GeminiChat = () => {
 const TierButton = ({ active, onClick, icon, label }: { active: boolean, onClick: () => void, icon: React.ReactNode, label: string }) => (
     <button
         onClick={onClick}
-        className={`flex items-center gap-2 px-6 py-3 rounded-2xl text-[11px] font-black transition-all ${active
+        className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-xl sm:rounded-2xl text-[9px] sm:text-[10px] md:text-[11px] font-black transition-all ${active
             ? "bg-white text-slate-900 shadow-xl shadow-black/10 scale-105"
             : "text-white/50 hover:text-white"
             }`}
