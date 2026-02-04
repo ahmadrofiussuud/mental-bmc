@@ -87,7 +87,7 @@ export const Header: React.FC<HeaderProps> = ({ variant = 'default' }) => {
                     <div className={`w-11 h-11 rounded-2xl flex items-center justify-center text-white shadow-xl transition-all duration-500 group-hover:rotate-12 ${(variant === 'settings' || variant === 'landing') && !isScrolled ? 'bg-indigo-500 shadow-indigo-500/20' : 'bg-indigo-600 shadow-indigo-200'}`}>
                         <ShieldCheck size={26} />
                     </div>
-                    <span className={`font-black text-2xl tracking-tighter transition-colors duration-500 ${(variant === 'settings' || variant === 'landing') && !isScrolled ? 'text-white' : 'text-slate-900'}`}>TenangIn</span>
+                    <span className={`font-black text-xl sm:text-2xl tracking-tighter transition-colors duration-500 ${(variant === 'settings' || variant === 'landing') && !isScrolled ? 'text-white' : 'text-slate-900'}`}>TenangIn</span>
                 </Link>
 
                 {/* Dynamic Navigation - Synchronized with current path */}
