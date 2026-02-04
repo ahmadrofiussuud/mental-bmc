@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { User, Calendar, ShieldCheck, ArrowRight, MessageSquare, Star, Clock, Video } from "lucide-react";
 import Image from "next/image";
+import HybridChatSystem from "@/components/HybridChatSystem";
 
 export default function ConsultationPage() {
     return (
@@ -98,6 +99,9 @@ export default function ConsultationPage() {
                         </div>
                     </div>
                 </section>
+
+                {/* HYBRID CHAT SYSTEM SECTION */}
+                <HybridChatSystem />
 
                 {/* 2. PSYCHOLOGIST DIRECTORY */}
                 <section className="py-20 px-6 md:px-12 bg-white" id="directory">

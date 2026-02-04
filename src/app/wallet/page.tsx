@@ -43,7 +43,7 @@ export default function WalletPage() {
                         <h2 className="text-[20rem] font-black text-white/5 tracking-[-0.1em] opacity-50 uppercase">Protected.</h2>
                     </div>
 
-                    <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-30">
+                    <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-30">
 
                         {/* LEFT SIDE: TEXT CONTENT (COL-7) */}
                         <motion.div
@@ -56,7 +56,7 @@ export default function WalletPage() {
                                 <Badge className="bg-blue-500/20 text-blue-300 px-8 py-3 rounded-full font-black uppercase text-sm tracking-[0.4em] border border-blue-500/30 backdrop-blur-md shadow-xl shadow-blue-500/10">
                                     Official Coverage
                                 </Badge>
-                                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-9xl font-black text-white tracking-[-0.03em] sm:tracking-[-0.04em] leading-[1.15] sm:leading-[1.1] drop-shadow-2xl">
+                                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white tracking-[-0.03em] sm:tracking-[-0.04em] leading-[1.15] sm:leading-[1.1] drop-shadow-2xl">
                                     Status <br />
                                     <span className="text-blue-400">Terlindungi.</span>
                                 </h1>
@@ -66,11 +66,11 @@ export default function WalletPage() {
                                 </p>
                             </div>
 
-                            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8">
-                                <Button className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-6 sm:px-12 sm:py-8 md:px-16 md:py-12 rounded-[30px] sm:rounded-[40px] font-black text-base sm:text-lg md:text-xl lg:text-2xl shadow-2xl transition-all hover:scale-105 active:scale-95 group">
+                            <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 md:gap-5">
+                                <Button className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-4 sm:px-10 sm:py-6 md:px-10 md:py-8 rounded-[30px] sm:rounded-[40px] font-black text-base sm:text-lg md:text-xl shadow-2xl transition-all hover:scale-105 active:scale-95 group">
                                     <CreditCard className="mr-2 sm:mr-3" size={20} /> Lihat Kartu Member
                                 </Button>
-                                <Button variant="outline" className="bg-transparent hover:bg-white/10 border-2 sm:border-3 md:border-4 border-white/20 text-white px-8 py-6 sm:px-12 sm:py-8 md:px-16 md:py-12 rounded-[30px] sm:rounded-[40px] font-black text-base sm:text-lg md:text-xl lg:text-2xl transition-all">
+                                <Button variant="outline" className="bg-transparent hover:bg-white/10 border-2 sm:border-3 md:border-3 border-white/20 text-white px-6 py-4 sm:px-10 sm:py-6 md:px-10 md:py-8 rounded-[30px] sm:rounded-[40px] font-black text-base sm:text-lg md:text-xl transition-all">
                                     <Tag className="mr-2 sm:mr-3" size={20} /> Benefit Saya
                                 </Button>
                             </div>
@@ -93,7 +93,7 @@ export default function WalletPage() {
                             initial={{ opacity: 0, rotateY: -20, rotateX: 10, scale: 0.8, x: 100 }}
                             animate={{ opacity: 1, rotateY: 0, rotateX: 0, scale: 1, x: 0 }}
                             transition={{ duration: 1.5, ease: "circOut" }}
-                            className="lg:col-span-5 relative lg:-ml-20 perspective-[2000px]"
+                            className="lg:col-span-5 relative perspective-[2000px]"
                         >
                             <div className="relative group cursor-pointer h-[450px]">
                                 {/* The Card itself */}
