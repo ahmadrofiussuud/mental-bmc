@@ -58,11 +58,11 @@ export default function LandingPage() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 lg:gap-8 justify-center lg:justify-start">
-                  <Button className="bg-white hover:bg-slate-100 text-slate-900 px-6 py-4 sm:px-10 sm:py-6 md:px-12 md:py-8 lg:px-16 lg:py-12 rounded-[25px] sm:rounded-[30px] md:rounded-[40px] lg:rounded-[50px] font-black text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl shadow-2xl transition-all hover:scale-105 active:scale-95 group">
+                  <Button className="bg-white hover:bg-slate-100 text-slate-900 px-8 sm:px-12 md:px-16 py-6 sm:py-8 md:py-10 rounded-3xl font-black text-base sm:text-xl md:text-2xl uppercase tracking-normal sm:tracking-wide shadow-2xl transition-all hover:scale-105 active:scale-95 group">
                     Mulai Sesi Gratis
                     <ArrowRight className="ml-1.5 sm:ml-2 md:ml-4 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 group-hover:translate-x-4 transition-transform text-indigo-600" />
                   </Button>
-                  <Button variant="outline" className="border-2 sm:border-3 md:border-4 border-white/20 text-white hover:bg-white/10 px-6 py-4 sm:px-10 sm:py-6 md:px-12 md:py-8 lg:px-16 lg:py-12 rounded-[25px] sm:rounded-[30px] md:rounded-[40px] lg:rounded-[50px] font-black text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl transition-all">
+                  <Button variant="outline" className="border-2 border-white/20 text-white hover:bg-white/10 px-8 sm:px-12 md:px-16 py-6 sm:py-8 md:py-10 rounded-3xl font-black text-base sm:text-xl md:text-2xl uppercase tracking-normal sm:tracking-wide transition-all">
                     Lihat Demo
                   </Button>
                 </div>
