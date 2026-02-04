@@ -21,18 +21,30 @@ export default function InstitutionsPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         <InstitutionCard
                             icon={<School size={48} />}
-                            title="Universitas"
-                            points={["ULT (Unit Layanan Terpadu) Integration", "Dukungan Kesejahteraan Mahasiswa", "Anonymous Bullying Reporting"]}
+                            title="Universitas (Mitra MBKM)"
+                            points={[
+                                "Integrasi Magang Klinis Digital untuk Mahasiswa Psikologi",
+                                "Legalitas Jam Terbang (Clinical Hours) yang Terverifikasi",
+                                "Akses Peer-Counselor tersertifikasi untuk seluruh mahasiswa"
+                            ]}
                         />
                         <InstitutionCard
                             icon={<Building2 size={48} />}
-                            title="Korporat"
-                            points={["Employee Assistance Program", "Aggregated Wellness Trends", "Professional Counseling Wallet"]}
+                            title="Fakultas & Satgas PPKS"
+                            points={[
+                                "Dashboard Monitoring Tren Mental Mahasiswa (Anonim)",
+                                "Sinkronisasi Laporan Bullying/Kekerasan Real-time ke ULT",
+                                "Early Warning System (EWS) untuk mitigasi risiko self-harm"
+                            ]}
                         />
                         <InstitutionCard
                             icon={<Landmark size={48} />}
-                            title="Pemerintah"
-                            points={["Public Health Monitoring", "Scalable Mental Health Access", "Policy-Driven Insights"]}
+                            title="Perusahaan (Corporate Wellness)"
+                            points={[
+                                "Integrasi Asuransi/Subsidi Konseling (Mental Health Wallet)",
+                                "AI Co-Pilot untuk efisiensi dukungan emosional karyawan 24/7",
+                                "Laporan Agregat Produktivitas & Wellbeing Karyawan"
+                            ]}
                         />
                     </div>
                 </div>
