@@ -195,12 +195,11 @@ export const GeminiChat = () => {
                         <div className="flex gap-4">
                             <form onSubmit={handleSubmit} className="flex-1 flex gap-4">
                                 <div className="flex-1 relative">
-                                    <input
-                                        className="w-full bg-slate-50 border-2 border-slate-100 rounded-[28px] pl-8 pr-16 py-6 text-lg font-bold text-slate-900 focus:border-indigo-500 focus:bg-white outline-none transition-all shadow-inner placeholder:text-slate-300"
-                                        value={input}
-                                        placeholder="Tuliskan perasaanmu..."
-                                        onChange={handleInputChange}
-                                        disabled={isLoading}
+                                    className="w-full bg-slate-50 border-2 border-slate-100 rounded-[28px] pl-6 sm:pl-8 pr-16 py-4 sm:py-6 text-base sm:text-lg font-bold text-slate-900 focus:border-indigo-500 focus:bg-white outline-none transition-all shadow-inner placeholder:text-slate-300"
+                                    value={input}
+                                    placeholder="Tuliskan perasaan..."
+                                    onChange={handleInputChange}
+                                    disabled={isLoading}
                                     />
                                     <div className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-300">
                                         {input.length > 0 && <span className="text-[10px] font-black">{input.length} char</span>}
@@ -209,26 +208,28 @@ export const GeminiChat = () => {
                                 <Button
                                     type="submit"
                                     disabled={isLoading || !input.trim()}
-                                    className="rounded-[28px] w-20 h-20 bg-indigo-600 hover:bg-slate-900 text-white shadow-2xl shadow-indigo-200 transition-all hover:scale-105 active:scale-95 flex items-center justify-center p-0"
+                                    className="rounded-[28px] w-16 h-16 sm:w-20 sm:h-20 bg-indigo-600 hover:bg-slate-900 text-white shadow-2xl shadow-indigo-200 transition-all hover:scale-105 active:scale-95 flex items-center justify-center p-0"
                                 >
                                     {isLoading ? (
                                         <div className="w-6 h-6 border-4 border-white border-t-transparent rounded-full animate-spin" />
                                     ) : (
-                                        <SendHorizontal size={32} />
+                                        <SendHorizontal className="w-6 h-6 sm:w-8 sm:h-8" />
                                     )}
                                 </Button>
                             </form>
                         </div>
-                        <div className="flex justify-between items-center px-4">
+                        <div className="flex flex-col sm:flex-row justify-between items-center px-4 gap-2 sm:gap-0">
                             <button
                                 onClick={() => setShowSummary(true)}
-                                className="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-indigo-600 transition-colors flex items-center gap-2"
+                                className="text-[9px] sm:text-[10px] font-black uppercase tracking-wide sm:tracking-widest text-slate-400 hover:text-indigo-600 transition-colors flex items-center gap-1.5 sm:gap-2"
                             >
-                                <FileJson size={14} />
-                                Export Screening Data (JSON)
+                                <FileJson className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                                <span className="hidden sm:inline">Export Screening Data (JSON)</span>
+                                <span className="sm:hidden">Export</span>
                             </button>
-                            <span className="text-[10px] font-black uppercase tracking-widest text-slate-300">
-                                Protected by TenangIn Guard v2.0
+                            <span className="text-[8px] sm:text-[10px] font-black uppercase tracking-wide sm:tracking-widest text-slate-300">
+                                <span className="hidden sm:inline">Protected by TenangIn Guard v2.0</span>
+                                <span className="sm:hidden">Protected by TenangIn</span>
                             </span>
                         </div>
                     </div>
