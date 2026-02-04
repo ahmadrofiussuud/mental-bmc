@@ -237,7 +237,7 @@ export default function LandingPage() {
 }
 
 const TrustBadge = ({ icon, label }: { icon: React.ReactNode, label: string }) => (
-  <div className="flex items-center gap-3 text-white/50 font-black text-xs uppercase tracking-[0.2em] whitespace-nowrap opacity-80 hover:opacity-100 transition-opacity cursor-default">
+  <div className="flex items-center gap-3 text-white/90 font-black text-xs uppercase tracking-[0.2em] whitespace-nowrap opacity-100 hover:opacity-100 transition-opacity cursor-default">
     {icon}
     <span>{label}</span>
   </div>
