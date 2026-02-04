@@ -165,7 +165,7 @@ export default function JourneyPage() {
                         <p className="text-xl text-indigo-200 font-medium max-w-xl mx-auto opacity-70">
                             Setiap Milestone kecil adalah kemenangan besar bagi kesehatan mental Anda. Teruslah tumbuh.
                         </p>
-                        <Button className="bg-white text-slate-900 hover:bg-slate-100 px-16 py-10 rounded-3xl font-black text-2xl uppercase tracking-widest transition-all">
+                        <Button className="bg-white text-slate-900 hover:bg-slate-100 px-8 sm:px-12 md:px-16 py-6 sm:py-8 md:py-10 rounded-3xl font-black text-base sm:text-xl md:text-2xl uppercase tracking-normal sm:tracking-wide transition-all">
                             Mulai Latihan 🚀
                         </Button>
                     </div>
