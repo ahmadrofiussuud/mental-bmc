@@ -227,7 +227,7 @@ export default function DashboardPage() {
                                 Status <span className="text-emerald-600 outline-text">Keanggotaan</span> & Proteksi.
                             </h2>
                             <p className="text-2xl text-slate-500 font-medium leading-relaxed max-w-2xl mx-auto">
-                                Anda terlindungi sepenuhnya. Akses layanan kesehatan mental premium tanpa memikirkan biaya, berkat dukungan Universitas Anda.
+                                Anda terlindungi sepenuhnya. Akses layanan kesehatan mental premium tanpa memikirkan biaya, berkat dukungan Universitas atau Fakultas Anda.
                             </p>
                         </div>
 
@@ -242,8 +242,8 @@ export default function DashboardPage() {
                                     <div className="flex justify-between items-start gap-4">
                                         <div className="space-y-2 flex-1">
                                             <p className="text-xs font-black uppercase tracking-[0.3em] sm:tracking-[0.4em] opacity-40">Active Coverage</p>
-                                            <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter">University Pro</p>
-                                            <p className="text-xs sm:text-sm md:text-base text-emerald-400 font-bold">Tercover Penuh oleh Universitas Indonesia</p>
+                                            <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter">University & Faculty Pro</p>
+                                            <p className="text-xs sm:text-sm md:text-base text-emerald-400 font-bold">Tercover Penuh oleh Fakultas/Universitas Anda melalui subsidi Wellness Wallet</p>
                                         </div>
                                         <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 rounded-2xl sm:rounded-3xl flex items-center justify-center backdrop-blur-md shrink-0">
                                             <ShieldCheck size={32} className="text-emerald-400 sm:w-10 sm:h-10" />
@@ -320,7 +320,7 @@ export default function DashboardPage() {
                                 Keamanan <br /> Prioritas <br /> <span className="text-rose-200">Mutlak.</span>
                             </h2>
                             <p className="text-2xl text-rose-100 font-medium leading-relaxed max-w-xl">
-                                Kami tersinkronisasi secara real-time dengan Unit Layanan Terpadu (ULT) Universitas Anda untuk perlindungan instan saat terjadi krisis.
+                                Kami tersinkronisasi secara real-time dengan Unit Layanan Terpadu (ULT) Universitas atau Fakultas Anda untuk perlindungan instan saat terjadi krisis.
                             </p>
                             <div className="flex gap-8 items-center">
                                 <div className="text-center">

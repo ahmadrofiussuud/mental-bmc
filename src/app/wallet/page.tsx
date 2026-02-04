@@ -109,7 +109,7 @@ export default function WalletPage() {
                                                 <div className="bg-white/10 p-2 rounded-lg">
                                                     <GraduationCap size={24} className="text-white" />
                                                 </div>
-                                                <p className="text-[10px] font-black uppercase tracking-[0.4em] text-white/60">University Plan</p>
+                                                <p className="text-[10px] font-black uppercase tracking-[0.4em] text-white/60">Faculty Plan</p>
                                             </div>
                                             <p className="text-4xl font-black tracking-tighter leading-tight">Universitas <br /> Indonesia</p>
                                         </div>
