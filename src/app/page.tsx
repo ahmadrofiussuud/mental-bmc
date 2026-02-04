@@ -37,7 +37,7 @@ export default function LandingPage() {
             <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-white to-transparent z-20" />
           </div>
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 w-full relative z-30 text-center lg:text-left">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 w-full relative z-10 text-center lg:text-left">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
               <div className="space-y-6 sm:space-y-8 lg:space-y-12">
                 <div className="space-y-4 sm:space-y-6 lg:space-y-8">
@@ -46,7 +46,7 @@ export default function LandingPage() {
                     The Future of Mental Peace
                   </div>
 
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-9xl font-black text-white tracking-[-0.03em] sm:tracking-[-0.04em] leading-[1.15] sm:leading-[1.1] drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] sm:drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-9xl font-black text-white tracking-[-0.03em] sm:tracking-[-0.04em] leading-[1.3] sm:leading-[1.25] md:leading-[1.2] lg:leading-[1.15] drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] sm:drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                     Mulai <br />
                     <span className="text-white/40 italic">Ketangguhan.</span>
                   </h1>
@@ -61,6 +61,9 @@ export default function LandingPage() {
                   <Button className="bg-white hover:bg-slate-100 text-slate-900 px-8 sm:px-12 md:px-16 py-6 sm:py-8 md:py-10 rounded-3xl font-black text-base sm:text-xl md:text-2xl uppercase tracking-normal sm:tracking-wide shadow-2xl transition-all hover:scale-105 active:scale-95 group">
                     Mulai Sesi Gratis
                     <ArrowRight className="ml-1.5 sm:ml-2 md:ml-4 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 group-hover:translate-x-4 transition-transform text-indigo-600" />
+                  </Button>
+                  <Button className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 sm:px-12 md:px-16 py-6 sm:py-8 md:py-10 rounded-3xl font-black text-base sm:text-xl md:text-2xl uppercase tracking-normal sm:tracking-wide shadow-2xl transition-all hover:scale-105 active:scale-95">
+                    Lihat Demo
                   </Button>
                 </div>
 
